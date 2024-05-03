@@ -10,7 +10,7 @@ This project was created with `create-uplift-project`
 
 Install the dependencies by running:
 
-```bash
+```
 npm install
 ```
 
@@ -20,7 +20,7 @@ npm install
 
 After the [installation](#installation), you can run
 
-```bash
+```
 npm run dev
 ```
 
