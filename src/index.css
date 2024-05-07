@@ -12,6 +12,7 @@
   scroll-behavior: smooth;
   --primary-color: #FF76CE;
   --secondary-color:#FDFFC2;
+  scroll-padding-top: 5em;
 }
 
 body {
