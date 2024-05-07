@@ -1,0 +1,59 @@
+.card {
+  box-shadow: -2px 1px 22px -2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: -2px 1px 22px -2px rgba(0,0,0,0.2);
+  -moz-box-shadow: -2px 1px 22px -2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid rgb(130, 130, 130);
+}
+
+.card-text {
+  position: relative;
+  padding: 1.5rem;
+  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.overlay {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('/akshar-dave-lXIpMj1AFUI-unsplash.jpg');
+    background-size: cover;
+    opacity: 0.02;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card-icon {
+  margin-right: 1rem;
+  color: rgb(41, 39, 39);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    height: 20rem;
+    align-items: end;
+  }
+
+  .card-text {
+    clip-path: none;
+  }
+
+  .card-icon {
+    display: none;
+  }
+}

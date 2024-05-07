@@ -6,32 +6,31 @@ function SortingPage() {
   return (
     <div className="page">
       <header>
-        <span style={{ color: "gray", fontWeight: 600 }}>Learn</span>
+        <span>Sorting</span>
         <span>Algorithms</span>
       </header>
       <main>
-        <h1>Sorting Algorithms</h1>
         <div className="lesson-container">
-          <Cards title={"Bubble Sort"} subtitle={"O(n^2)"} color={"#FF76CE"} />
+          <Cards title={"Bubble Sort"} subtitle={"O(n^2)"} color={"#A3D8FF"} />
           <Cards
             title={"Selection Sort"}
             subtitle={"O(n^2)"}
-            color={"#FF76CE"}
+            color={"#A3D8FF"}
           />
           <Cards
             title={"Insertion Sort"}
             subtitle={"O(n^2)"}
-            color={"#FF76CE"}
+            color={"#A3D8FF"}
           />
           <Cards
             title={"Quick Sort"}
             subtitle={"O(n logn)"}
-            color={"#94FFD8"}
+            color={"#A3D8FF"}
           />
           <Cards
             title={"Merge Sort"}
             subtitle={"O(n logn)"}
-            color={"#94FFD8"}
+            color={"#A3D8FF"}
           />
         </div>
       </main>
