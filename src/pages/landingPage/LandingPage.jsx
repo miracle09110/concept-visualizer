@@ -1,12 +1,12 @@
 import React from "react";
 import HeaderView from "./header/Header.view";
-import ExploreView from "./explore/Explore.view";
+import ExploreController from "./explore/Explore.controller";
 
 const LandingPage = () => {
   return (
     <>
       <HeaderView />
-      <ExploreView/>
+      <ExploreController/>
     </>
   );
 };
