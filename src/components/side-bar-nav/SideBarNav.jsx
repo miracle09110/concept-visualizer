@@ -12,50 +12,47 @@ const SideBarNav = () => {
 
 	return (
 		<div>
-			<div className={`w-17 bg-tertiary fixed px-2 py-2 ${click && "w-[50px]"}`}>
+			<div className={`bg-tertiary h-full fixed top-0 left-0 px-2 py-3 ${click ? "w-50" : "w-17"}`}>
 				<button onClick={() => setClick(!click)}>
-					<FaBars className="me-5 ms-2 mt-1.5 cursor-pointer" />
+					<FaBars className="text-black cursor-pointer" />
 				</button>
 			</div>
 
-			<div className={`${click ? "hidden" : "block"}`}>
-				<div className="w-64 bg-tertiary px-4 py-2">
-					<h1 className="flex items-center text-xl ms-11 mb-2">Dashboard</h1>
-					<hr />
-				</div>
-				<ul className="text-black font-bold fixed h-full w-64 bg-tertiary px-4 py-2">
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+			<div className={`w-45 h-screen ${click ? "" : "hidden"}`}>
+				<ul className="text-black font-bold fixed top-0 left-8 h-full bg-tertiary py-2">
+					<h1 className="text-black font-bold items-center text-xl px-1 ms-5 mb-2 mr-12 pb-3">Dashboard</h1>
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-12">
 							<FaHome className="inline-block w-6 h-6 mr-2 -mt-2" />
 							Home
 						</a>
 					</li>
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-12">
 							<BsBarChartFill className="inline-block w-6 h-6 mr-2 -mt-2" />
 							Sorting
 						</a>
 					</li>
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-12">
 							<LuFileSearch className="inline-block w-6 h-6 mr-2 -mt-2" />
 							Searching
 						</a>
 					</li>
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-10">
 							<VscGraphScatter className="inline-block w-6 h-6 mr-2 -mt-2" />
 							Pathfinding
 						</a>
 					</li>
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-12">
 							<FaReact className="inline-block w-6 h-6 mr-2 -mt-2" />
-							React
+							ReactJS
 						</a>
 					</li>
-					<li className="mb-2 rounded hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
-						<a href="" className="px-3">
+					<li className="mb-2 rounded hover:mr-1 hover:shadow hover:bg-slate-800 py-2 hover:text-secondary">
+						<a href="" className="pr-12">
 							<FaNodeJs className="inline-block w-6 h-6 mr-2 -mt-2" />
 							NodeJS
 						</a>
