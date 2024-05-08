@@ -1,91 +1,74 @@
-.explore_container{
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+.explore_container {
+  gap: 1em;
 }
 
-.explore_container h2{
-    font-size: 40px;
-    text-align: center;
-
+.explore_container h2 {
+  font-size: 40px;
+  text-align: center;
 }
 
-/* .explore_container > .card:nth-of-type(2n){
-    flex-direction: row-reverse;
-   
-} */
-
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 1em;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    padding: 32px;
-    border-radius: 24px;
-    text-align: left;
-    margin: 2em 5em;
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding: 32px;
+  border-radius: 24px;
+  text-align: left;
+  margin: 2em 5em;
 }
 
-/* .text_container h3, .text_container p {
-    min-width: 300px;
-    max-width: 600px;
-    margin-top: 0;
-} */
-
-.main_text{
-    font-size: 1.6em;
-    text-shadow: -3px 5px 4px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
-    text-align: left;
-    margin-top: 0;
+.main_text {
+  font-size: 1.6em;
+  text-shadow: -3px 5px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  text-align: left;
+  margin-top: 0;
 }
 
-.sub_text{
-    opacity: 0.75;
-    line-height: 20px;
-    margin-top: 8px;
+.sub_text {
+  opacity: 0.75;
+  line-height: 20px;
+  margin-top: 8px;
 }
 
-.item_container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3em;
-    text-align: center;
-        
+.item_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  text-align: center;
 }
 
-.item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
-.item a{
-    max-width: 100px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+.item a {
+  max-width: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
-
-
-.placeholder{
-    background-color: gray;
-    width: 100px;
-    height: 100px;
-    border-radius: 24px;
+.placeholder {
+  background-color: gray;
+  width: 100px;
+  height: 100px;
+  border-radius: 24px;
 }
 
-@media screen and (max-width:500px) {
-  .card{
+@media screen and (max-width: 500px) {
+  .card {
     margin: 1em 0.4em;
   }
 
-  .item_container{
+  .item_container {
     justify-content: center;
   }
 }
