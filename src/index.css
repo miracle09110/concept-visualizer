@@ -10,18 +10,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 8em;
+
   --primary-color: #FF76CE;
   --secondary-color:#FDFFC2;
-  scroll-padding-top: 8em;
+  --accent-color1:#94FFD8;
+  --accent-color2:#A3D8FF;
 }
 
 body {
   margin: 0;
 }
 
-
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
