@@ -1,4 +1,4 @@
-import SortingPage from "./pages/sorting/SortingPage";
+import SortingPage from "./pages/SortingPage/SortingPage";
 
 function App() {
   return (
