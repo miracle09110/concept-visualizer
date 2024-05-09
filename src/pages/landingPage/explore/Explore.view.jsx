@@ -24,7 +24,6 @@ const ExploreView = ({ concepts }) => {
   return (
     <div className={style.explore_container} id="explore">
       <h2>Explore</h2>
-
       {conceptList}
     </div>
   );
