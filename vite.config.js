@@ -14,4 +14,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
+  css: {
+		modules: true, // Enable CSS modules
+	},
 });
