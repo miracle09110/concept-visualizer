@@ -9,7 +9,7 @@ const Navbar = () => {
 	const handleClick = () => {
 		setClick(!click);
 	};
-
+	
 	const content = (
 		<>
 			<div className="lg:hidden z-50 block absolute top-16 w-full left-0 right-0 bg-primary backdrop-blur-lg bg-opcity-30 transition-300">
@@ -165,10 +165,7 @@ const Navbar = () => {
 											Algorithms <IoIosArrowDropdown className="m-1" />
 										</span>
 									</button>
-									<div
-										className="hidden group-hover:flex flex-col rounded absolute pl-3 pr-4 py-5
-                  w-70 z-20 bg-slate-800 text-secondary duration-300"
-									>
+									<div className="hidden group-hover:flex flex-col rounded absolute pl-3 pr-4 py-5 w-70 z-20 bg-slate-800 text-secondary duration-300">
 										<div className="grid grid-cols-3 md-grid-cols-4 gap-5">
 											<div className="flex flex-col">
 												<h3 className="text-[0.6em] font-bold hover:underline">
@@ -241,15 +238,11 @@ const Navbar = () => {
 											React Concepts <IoIosArrowDropdown className="m-1" />
 										</span>
 									</button>
-									<div
-										className="hidden group-hover:flex flex-col rounded absolute p-6
-                  w-[13rem] z-20 bg-slate-800 text-secondary duration-300"
-									>
+									<div className="hidden group-hover:flex flex-col rounded absolute p-6 w-[13rem] z-20 bg-slate-800 text-secondary duration-300">
 										<div className="flex flex-col">
 											<h3 className="text-[0.6em] font-bold hover:underline mx-3">
 												<a href="">State and Props</a>
 											</h3>
-
 											<h3 className="text-[0.6em] font-bold hover:underline mx-3">
 												<a href="">useContext</a>
 											</h3>
