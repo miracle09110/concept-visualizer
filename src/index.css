@@ -16,10 +16,10 @@
   scroll-behavior: smooth;
   scroll-padding-top: 8em;
 
-  --primary-color: #ff76ce;
-  --secondary-color: #fdffc2;
-  --accent-color1: #94ffd8;
-  --accent-color2: #a3d8ff;
+  --primary-color: #FF76CE;
+  --secondary-color: #FDFFC2;
+  --accent-color1: #94FFD8;
+  --accent-color2: #A3D8FF;
 }
 
 body {
