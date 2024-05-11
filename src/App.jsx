@@ -1,12 +1,12 @@
-import SortingPage from "./pages/SortingPage/SortingPage";
+import React from 'react'
+import LandingPage from './pages/landingPage/landingPage'
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1>Happy Coding 🚀</h1>
-      <SortingPage />
+      <LandingPage/>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage renders 1`] = `
+[
+  <nav>
+    <h1>
+      Concept Visualizer
+    </h1>
+    <div
+      className="hamburger_menu"
+    >
+      =
+    </div>
+  </nav>,
+  <div
+    className="header_section"
+  >
+    <div
+      className="text_container"
+    >
+      <h1>
+        Concept Visualizers: Explore Algorithms, React, and Web Dev Concepts
+      </h1>
+      <h3>
+        Interactive Tools for Understanding Complex Algorithms, ReactJS and Web Development Concepts
+      </h3>
+      <a
+        href="#explore"
+      >
+        <button>
+          Explore!
+        </button>
+      </a>
+    </div>
+  </div>,
+  <div
+    className="explore_container"
+    id="explore"
+  >
+    <h2>
+      Explore
+    </h2>
+    <div
+      className="card"
+    >
+      <h3
+        className="main_text"
+      >
+        Algorithms
+      </h3>
+      <div
+        className="item_container"
+      >
+        <div
+          className="item"
+        >
+          <a>
+            Bubble Sort
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Selection Sort
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Insertion Sort
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Quick Sort
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Merge Sort
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Linear Search
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Depth first
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Width first
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Jump Search
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Binary Search
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Ternary Search
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Exponential Search
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Cycle detection
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Dijkstra’s algorithm
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            A* algorithm
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+    >
+      <h3
+        className="main_text"
+      >
+        React Concepts
+      </h3>
+      <div
+        className="item_container"
+      >
+        <div
+          className="item"
+        >
+          <a>
+            State and Props
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            useContext
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+    >
+      <h3
+        className="main_text"
+      >
+        Web Concepts
+      </h3>
+      <div
+        className="item_container"
+      >
+        <div
+          className="item"
+        >
+          <a>
+            Server-Client
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            REST API
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+        <div
+          className="item"
+        >
+          <a>
+            Webhook
+          </a>
+          <div
+            className="placeholder"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
