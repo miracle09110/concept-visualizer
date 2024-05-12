@@ -1,12 +1,12 @@
-import React from 'react'
-import LandingPage from './pages/landingPage/landingPage'
+import React from "react";
+import LandingPage from "./pages/landingPage/LandingPage";
 
 const App = () => {
   return (
     <>
-      <LandingPage/>
+      <LandingPage />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
