@@ -1,5 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import style from "./BubbleSort.module.css";
+import { motion } from "framer-motion";
+
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 300,
+};
 
 function bubbleSort(arr) {
   let swapped;
@@ -16,13 +23,13 @@ function bubbleSort(arr) {
       }
     }
   } while (swapped);
-  console.log(arr);
+
   return arr;
 }
 
 function BubbleSort() {
   const [input, setInput] = useState("");
-  const [array, setArray] = useState([6, 42, 5, 10, 3, 27]);
+  const [array, setArray] = useState([6, 42, 5, 10, 10, 3, 27, -1, 29]);
   const [ind1, setInd1] = useState(-1);
   const [ind2, setInd2] = useState(-1);
   const [complete, setComplete] = useState(true);
@@ -30,7 +37,6 @@ function BubbleSort() {
   const result = useMemo(() => bubbleSort([...array]), [array]);
 
   function handleDigitInput(e) {
-    console.log(e);
     const allowedCharacters = /[0-9,\s]/;
     if (!allowedCharacters.test(e.key)) {
       return;
@@ -54,6 +60,7 @@ function BubbleSort() {
   function compare() {
     const copy = [...array];
 
+    // checks if the demo array is arranged exactly as to that of the memoed solution.
     if (
       ind1 === copy.length - 2 &&
       ind2 === copy.length - 1 &&
@@ -66,6 +73,7 @@ function BubbleSort() {
       return;
     }
 
+    // checks if ind1 and ind2 are at the end of the array and checks the last two elements if arranged properly. if yes, will iterate over the array again
     if (
       ind1 === copy.length - 2 &&
       ind2 === copy.length - 1 &&
@@ -76,7 +84,8 @@ function BubbleSort() {
       return;
     }
 
-    if (copy[ind1] < copy[ind2]) {
+    // checks if left element is smaller than right element. if yes, proceed to next element.
+    if (copy[ind1] <= copy[ind2]) {
       setInd1((i) => i + 1);
       setInd2((i) => i + 1);
     } else {
@@ -95,14 +104,16 @@ function BubbleSort() {
       <div className={style.container}>
         {array.map((item, index) => {
           return (
-            <div
-              key={index}
+            <motion.div
+              key={`${item}` + `${index}`}
+              layout
+              transition={spring}
               className={
                 ind1 === index || ind2 === index ? style.selected : style.digits
               }
             >
               {item}
-            </div>
+            </motion.div>
           );
         })}
       </div>
