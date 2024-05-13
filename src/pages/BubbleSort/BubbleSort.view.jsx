@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import style from "./BubbleSort.module.css";
 import { motion } from "framer-motion";
 
@@ -105,7 +105,7 @@ function BubbleSort() {
         {array.map((item, index) => {
           return (
             <motion.div
-              key={`${item}` + `${index}`}
+              key={`${item}_${index}`}
               layout
               transition={spring}
               className={
