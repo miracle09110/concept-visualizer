@@ -29,7 +29,7 @@ function bubbleSort(arr) {
 
 function BubbleSort() {
   const [input, setInput] = useState("");
-  const [array, setArray] = useState([6, 42, 5, 10, 10, 3, 27, -1, 29]);
+  const [array, setArray] = useState([6, 42, 5, 10, 3, 27, -1, 29]);
   const [ind1, setInd1] = useState(-1);
   const [ind2, setInd2] = useState(-1);
   const [complete, setComplete] = useState(true);
@@ -105,7 +105,7 @@ function BubbleSort() {
         {array.map((item, index) => {
           return (
             <motion.div
-              key={`${item}_${index}`}
+              key={item}
               layout
               transition={spring}
               className={
