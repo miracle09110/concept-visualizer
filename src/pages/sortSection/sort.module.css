@@ -1,0 +1,47 @@
+.container {
+  /* padding: 3rem 0; */
+  /* height: 84vh; */
+  background-color: rgb(253, 255, 194);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort_card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding: 2rem;
+  text-align: left;
+  border-radius: 1.5rem;
+  margin: 1em 0.4em;
+}
+
+.sort_card h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  color: #333333;
+}
+
+.concept_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 500px) {
+  .sort_card {
+    margin: 2em 5em;
+  }
+  .concept_container {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+}

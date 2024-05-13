@@ -1,13 +1,9 @@
 .card {
-  box-shadow: -2px 1px 10px -2px rgba(0,0,0,0.2);
-  -webkit-box-shadow: -2px 1px 10px -2px rgba(0,0,0,0.2);
-  -moz-box-shadow: -2px 1px 10px -2px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 2rem;
   overflow: hidden;
+  display: flex;
+  width: 100%;
+  align-items: center;
   background-color: white;
   border: 1px solid rgb(130, 130, 130);
 }
@@ -18,28 +14,16 @@
 }
 
 .card_text {
-  position: relative;
+  flex: 1;
   padding: 1.5rem;
-  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   text-align: left;
-}
-
-.overlay {
-  position:absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url('/card-image-overlay.jpg');
-  background-size: cover;
-  opacity: 0.02;
+  color: #333333;
 }
 
 .card_title {
-  font-size: 24px;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -48,8 +32,9 @@
   color: rgb(41, 39, 39);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
   .card {
+    width: auto;
     height: 20rem;
     flex-direction: column;
     align-items: stretch;

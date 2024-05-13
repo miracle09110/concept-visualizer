@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./explore.module.css";
+import SortController from "../../sortSection/Sort.controller";
 
 const ExploreView = ({ concepts }) => {
   const conceptList = concepts.map((concept) => {
@@ -25,6 +26,7 @@ const ExploreView = ({ concepts }) => {
     <div className={style.explore_container} id="explore">
       <h2>Explore</h2>
       {conceptList}
+      <SortController />
     </div>
   );
 };
