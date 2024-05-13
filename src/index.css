@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -12,7 +16,7 @@
   scroll-behavior: smooth;
   scroll-padding-top: 8em;
 
-  --primary-color: #FF76CE;
+  --primary-color:#FF76CE;
   --secondary-color:#FDFFC2;
   --accent-color1:#94FFD8;
   --accent-color2:#A3D8FF;
@@ -21,4 +25,3 @@
 body {
   margin: 0;
 }
-
