@@ -9,31 +9,42 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .digits {
-  width: 24px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
-  background-color: lightcoral;
+  align-items: center;
+  background-color: rgb(163, 216, 255);
   color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px #333;
   padding: 16px;
   margin: 4px;
+  border-radius: 50%;
 }
 
 .selected {
-  width: 24px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
-  background-color: lightgreen;
+  align-items: center;
+  background-color: rgb(38, 108, 158);
+  text-shadow: 1px 1px #333;
   color: white;
   padding: 16px;
   margin: 4px;
+  border-radius: 50%;
 }
 
 .button {
+  background-color: white;
   margin: 16px;
   padding: 8px;
 }

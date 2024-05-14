@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import style from "./BubbleSort.module.css";
 import { motion } from "framer-motion";
 
@@ -28,27 +28,28 @@ function bubbleSort(arr) {
 }
 
 function BubbleSort() {
-  const [input, setInput] = useState("");
-  const [array, setArray] = useState([6, 42, 5, 10, 3, 27, -1, 29]);
+  const [array, setArray] = useState([]);
   const [ind1, setInd1] = useState(-1);
   const [ind2, setInd2] = useState(-1);
   const [complete, setComplete] = useState(true);
   const [ongoing, setOngoing] = useState(false);
   const result = useMemo(() => bubbleSort([...array]), [array]);
 
-  function handleDigitInput(e) {
-    const allowedCharacters = /[0-9,\s]/;
-    if (!allowedCharacters.test(e.key)) {
-      return;
-    } else {
-      setInput(() => e.target.value);
-    }
+  function initialize(num = 8) {
+    const random = [...Array(num)].map((_, index) => {
+      return {
+        id: index,
+        number: Math.floor(Math.random() * 50) - 10,
+      };
+    });
+    setArray(random);
   }
 
-  function handleInitializeArray() {
-    let numbersArray = input.split(/\s*,\s*|\s+/).map((n) => Number(n));
-    setArray(numbersArray);
-  }
+  useEffect(() => {
+    initialize();
+  }, []);
+
+  console.log(array);
 
   function start() {
     setInd1(0);
@@ -64,7 +65,7 @@ function BubbleSort() {
     if (
       ind1 === copy.length - 2 &&
       ind2 === copy.length - 1 &&
-      result.every((value, index) => value === copy[index])
+      result.every((value, index) => value.number === copy[index].number)
     ) {
       setOngoing(false);
       setComplete(true);
@@ -77,7 +78,7 @@ function BubbleSort() {
     if (
       ind1 === copy.length - 2 &&
       ind2 === copy.length - 1 &&
-      copy[ind1] < copy[ind2]
+      copy[ind1].number < copy[ind2].number
     ) {
       setInd1(0);
       setInd2(1);
@@ -85,7 +86,7 @@ function BubbleSort() {
     }
 
     // checks if left element is smaller than right element. if yes, proceed to next element.
-    if (copy[ind1] <= copy[ind2]) {
+    if (copy[ind1].number <= copy[ind2].number) {
       setInd1((i) => i + 1);
       setInd2((i) => i + 1);
     } else {
@@ -102,33 +103,24 @@ function BubbleSort() {
     <section className={style.section}>
       <h1>Bubble Sort</h1>
       <div className={style.container}>
-        {array.map((item, index) => {
+        {array.map((item) => {
           return (
             <motion.div
-              key={item}
+              key={item.id}
               layout
               transition={spring}
               className={
-                ind1 === index || ind2 === index ? style.selected : style.digits
+                ind1 === item.id || ind2 === item.id
+                  ? style.selected
+                  : style.digits
               }
             >
-              {item}
+              {item.number}
             </motion.div>
           );
         })}
       </div>
-      <div className={style.container} style={{ flexDirection: "column" }}>
-        <input
-          type="text"
-          value={input}
-          className={style.input}
-          onChange={handleDigitInput}
-        />
-        <button className={style.button} onClick={handleInitializeArray}>
-          go
-        </button>
-      </div>
-      <div className={style.container}>
+      <div className={style.btns}>
         <button
           disabled={ongoing}
           className={style.button}
@@ -144,6 +136,9 @@ function BubbleSort() {
         </button>
         <button className={style.button} onClick={compare} disabled={complete}>
           next
+        </button>
+        <button className={style.button} onClick={() => initialize()}>
+          init
         </button>
       </div>
     </section>
