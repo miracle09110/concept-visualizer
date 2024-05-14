@@ -3,8 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
+  background-color: #DCDCDC;
   height: 100vh;
+}
+
+.section h1 {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .container {
@@ -12,44 +17,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
 }
 
 .digits {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(163, 216, 255);
   color: white;
   font-weight: 700;
-  text-shadow: 1px 1px #333;
-  padding: 16px;
-  margin: 4px;
+  font-size: 1.5rem;
+  text-shadow: 2px 1px #333;
   border-radius: 50%;
 }
 
 .selected {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(38, 108, 158);
-  text-shadow: 1px 1px #333;
   color: white;
-  padding: 16px;
-  margin: 4px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 2px 1px #333;
   border-radius: 50%;
 }
 
 .button {
   background-color: white;
+  border-radius: 0.25rem;
+  width: 5rem;
   margin: 16px;
   padding: 8px;
+  font-weight: 700;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
 }
 
-.input {
-  margin-top: 8px;
-  padding: 5px;
+.button:disabled {
+  color: #DCDCDC;
 }

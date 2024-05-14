@@ -1,12 +1,12 @@
 import React from "react";
 import HeaderView from "./header/header.view";
 import ExploreController from "./explore/Explore.controller";
-import BubbleSort from "../BubbleSort/BubbleSort.view";
+import BubbleSortController from "../BubbleSort/BubbleSort.controller";
 
 const LandingPage = () => {
   return (
     <>
-      <BubbleSort />
+      <BubbleSortController />
       <HeaderView />
       <ExploreController />
     </>
