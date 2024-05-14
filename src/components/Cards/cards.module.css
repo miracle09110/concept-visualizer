@@ -1,5 +1,5 @@
 .card {
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   display: flex;
   width: 100%;
@@ -32,7 +32,7 @@
   color: rgb(41, 39, 39);
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 555px) {
   .card {
     width: auto;
     height: 20rem;

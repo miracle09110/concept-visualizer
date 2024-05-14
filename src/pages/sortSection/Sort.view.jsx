@@ -3,7 +3,7 @@ import style from "./sort.module.css";
 import Cards from "../../components/Cards/Cards.view";
 
 function SortView({ conceptItems }) {
-  const conceptCards = conceptItems.map((item) => {
+  const conceptCards = conceptItems.items.map((item) => {
     return (
       <Cards
         key={item.title}
@@ -17,10 +17,8 @@ function SortView({ conceptItems }) {
 
   return (
     <section className={style.container} id="sort">
-      <div className={style.sort_card}>
-        <h1>Sort Algorithms</h1>
-        <div className={style.concept_container}>{conceptCards}</div>
-      </div>
+      <h1>{conceptItems.category}</h1>
+      <div className={style.concept_container}>{conceptCards}</div>
     </section>
   );
 }
