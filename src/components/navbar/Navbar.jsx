@@ -34,9 +34,12 @@ const Navbar = () => {
                     <h3 className="text-[0.6em] font-bold hover:underline">
                       <a href="">Sorting</a>
                     </h3>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    <Link
+                      to="bubble"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Bubble Sort
-                    </a>
+                    </Link>
                     <a href="" className="hover:underline text-[0.5em] mx-3">
                       Selection Sort
                     </a>
@@ -174,19 +177,34 @@ const Navbar = () => {
                         <h3 className="text-[0.6em] font-bold hover:underline">
                           <a href="">Sorting</a>
                         </h3>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <Link
+                          to="/bubble"
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Bubble Sort
-                        </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        </Link>
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Selection Sort
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Insertion Sort
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Quick Sort
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Merge Sort
                         </a>
                       </div>
@@ -194,25 +212,46 @@ const Navbar = () => {
                         <h3 className="text-[0.6em] font-bold hover:underline">
                           <a href="">Searching</a>
                         </h3>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Linear Search
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Depth first
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Width first
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Jump Search
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Binary Search
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Ternary Search
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Exponential Search
                         </a>
                       </div>
@@ -220,13 +259,22 @@ const Navbar = () => {
                         <h3 className="text-[0.6em] font-bold hover:underline">
                           <a href="">More Algorithms</a>
                         </h3>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Cycle detection
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           Dijkstra’s algorithm
                         </a>
-                        <a href="" className="hover:underline text-[0.5em] mx-3">
+                        <a
+                          href=""
+                          className="hover:underline text-[0.5em] mx-3"
+                        >
                           A* algorithm
                         </a>
                       </div>
