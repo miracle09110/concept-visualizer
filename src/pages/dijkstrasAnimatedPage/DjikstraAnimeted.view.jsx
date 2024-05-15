@@ -1,64 +1,196 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const createGridArray = (numberOfRows, numberOfColumns) => {
-  const grid = [];
-  for (let row = 0; row < numberOfRows; row++) {
-    for (let column = 0; column < numberOfColumns; column++) {
-      grid.push([row, column]);
+const DijkstraAnimatedView = () => {
+  const [gridArray, setGridArray] = useState([]);
+  const [startSquare, setStartSquare] = useState([10, 5]);
+  const [endSquare, setEndSquare] = useState([15, 18]);
+  const [visitedNodes, setVisitedNodes] = useState(new Set());
+  const [shortestPath, setShortestPath] = useState([]);
+  const [isAnimatingPath, setIsAnimatingPath] = useState(false);
+  const [dimension, setDimension] = useState(30)
+
+
+  const createGridArray = (numberOfRows, numberOfColumns) => {
+    const grid = [];
+    for (let row = 0; row < numberOfRows; row++) {
+      for (let column = 0; column < numberOfColumns; column++) {
+        grid.push({ coordinates: [row, column], type: "cell" });
+      }
     }
-  }
+    return grid;
+  };
 
-  return grid;
-};
+  useEffect(() => {
+    
 
-const displayGridFromArray = (array) => {
-  const startSquare = [8, 3];
-  const endSquare = [3, 8];
+    
+    const grid = createGridArray(dimension, dimension);
+    setGridArray(grid);
+  
+
+ 
+  }, []);
+
+
+
+  const dijkstra = () => {
+    const graph = {}; // Construct graph with neighbors (adjacency list)
+    for (const item of gridArray) {
+      const [row, col] = item.coordinates;
+      const neighbors = [];
+      if (row > 0) neighbors.push(`${row - 1}-${col}`); // Top neighbor
+      if (row < dimension-1) neighbors.push(`${row + 1}-${col}`); // Bottom neighbor
+      if (col > 0) neighbors.push(`${row}-${col - 1}`); // Left neighbor
+      if (col < dimension-1) neighbors.push(`${row}-${col + 1}`); // Right neighbor
+      graph[`${row}-${col}`] = neighbors;
+    }
+
+    console.log(gridArray)
+
+    const distances = {}; // Distances from startSquare to each node
+    const previous = {}; // Previous node in the shortest path
+    for (const item of gridArray) {
+      const [row, col] = item.coordinates;
+      const key = `${row}-${col}`;
+      distances[key] =
+        key === `${startSquare[0]}-${startSquare[1]}` ? 0 : Infinity;
+      previous[key] = null;
+    }
+
+    const unvisited = new Set(Object.keys(distances));
+    console.log(unvisited)
+
+    const animateDijkstra = () => {
+      const animate = setInterval(() => {
+        if (unvisited.size === 0) {
+          clearInterval(animate);
+          traceShortestPath(`${endSquare[0]}-${endSquare[1]}`);
+        }
+
+        let currentNode = null;
+        let minDistance = Infinity;
+        for (const node of unvisited) {
+          if (distances[node] < minDistance) {
+            currentNode = node;
+            minDistance = distances[node];
+          }
+        }
+
+        if (currentNode === null) return;
+        unvisited.delete(currentNode);
+        setVisitedNodes((prevNodes) => new Set([...prevNodes, currentNode]));
+
+        if (currentNode === `${endSquare[0]}-${endSquare[1]}`) {
+          clearInterval(animate);
+          traceShortestPath(currentNode); // Trigger path tracing
+        }
+
+        for (const neighbor of graph[currentNode]) {
+          const [row, col] = neighbor.split("-");
+          const neighborKey = `${row}-${col}`;
+          const distance = distances[currentNode] + 1;
+          if (distance < distances[neighborKey]) {
+            distances[neighborKey] = distance;
+            previous[neighborKey] = currentNode;
+          }
+        }
+      }, 10); // Adjust animation speed (in milliseconds)
+    };
+
+    const traceShortestPath = (endNode) => {
+      const path = [];
+      let current = endNode;
+      while (current !== null) {
+        path.unshift(current);
+        current = previous[current];
+      }
+      setShortestPath(path);
+      animateShortestPath(path); // Initiate path animation
+    };
+
+    animateDijkstra();
+  };
+
+  const animateShortestPath = (path) => {
+    setIsAnimatingPath(true);
+    let index = 0;
+    const animatePath = setInterval(() => {
+      if (index >= path.length) {
+        clearInterval(animatePath);
+        setIsAnimatingPath(false);
+        return;
+      }
+
+      const currentNode = path[index];
+      setVisitedNodes((prevNodes) => new Set([...prevNodes, currentNode]));
+      index++;
+    }, 10); // Adjust animation speed (in milliseconds)
+  };
+
+  const handleVisualizeClick = () => {
+    setVisitedNodes(new Set());
+    setShortestPath([]);
+    setIsAnimatingPath(false);
+    dijkstra();
+  };
+
+  const displayGrid = gridArray.map((arrayItem) => {
+    const [row, col] = arrayItem.coordinates;
+    const isStart = row === startSquare[0] && col === startSquare[1];
+    const isEnd = row === endSquare[0] && col === endSquare[1];
+    const isVisited = visitedNodes.has(`${row}-${col}`);
+    const isInShortestPath = shortestPath.includes(`${row}-${col}`);
+
+    let cellClassName = "bg-gray-400 border-2 aspect-square";
+    if (isStart) cellClassName = "bg-red-400 border-2 aspect-square";
+    if (isEnd) cellClassName = "bg-blue-400 border-2 aspect-square";
+    if (isVisited && !isStart && !isEnd && !isInShortestPath)
+      cellClassName = "bg-yellow-300 border-2 aspect-square";
+    if (isInShortestPath && !isStart && !isEnd)
+      cellClassName = "bg-green-400 border-2 aspect-square";
+
+    return (
+      <div
+        key={`${row}-${col}`}
+        className={cellClassName}
+        onClick={() => handleCellClick(row, col)}
+      ></div>
+    );
+  });
+
+  const handleCellClick = (row, col) => {
+    if (row === startSquare[0] && col === startSquare[1]) return;
+    if (row === endSquare[0] && col === endSquare[1]) return;
+    const updatedGrid = gridArray.map((item) => {
+      if (item.coordinates[0] === row && item.coordinates[1] === col) {
+        return {
+          ...item,
+          type: item.type === "obstacle" ? "cell" : "obstacle",
+        };
+      }
+      return item;
+    });
+    setGridArray(updatedGrid);
+  };
+
 
   return (
-    <div className="grid grid-cols-10 ">
-      {array.map((arrayItem) => {
-        const [row, col] = arrayItem;
-
-        if (row === startSquare[0] && col === startSquare[1]) {
-          return (
-            <div
-              key={`${row}-${col}`}
-              className="bg-red-400 border-2 aspect-square place-content-center text-center"
-              id={`${row}${col}`}
-            >
-              Start
-            </div>
-          );
-        }
-
-        if (row === endSquare[0] && col === endSquare[1]) {
-          return (
-            <div
-              key={`${row}-${col}`}
-              className="bg-blue-400 border-2 aspect-square place-content-center text-center"
-              id={`${row}${col}`}
-            >
-              End
-            </div>
-          );
-        }
-        return (
-          <div
-            key={`${row}-${col}`}
-            className="bg-gray-400 border-2 aspect-square"
-            id={`${row}${col}`}
-          ></div>
-        );
-      })}
+    <div className="mx-auto w-1/2">
+      <div className={`grid grid-cols-[repeat(30,minmax(0,1fr))]`}>{displayGrid}</div>
+      <button
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+        onClick={handleVisualizeClick}
+        disabled={isAnimatingPath}
+      >
+        {isAnimatingPath
+          ? "Animating Path..."
+          : "Visualize Dijkstra's Algorithm"}
+      </button>
+      <label htmlFor="dimensions"></label>
+        <input type="number" onChange={e=>setDimension(e.target.value)}/>
+      <button type="button" onClick={()=>createGridArray(dimension,dimension)}>change dimensions</button>
     </div>
   );
 };
 
-const grid = createGridArray(10, 10);
-const displayGrid = displayGridFromArray(grid);
-const DjikstraAnimatedView = () => {
-  return <div className=" mx-auto  w-1/2">{displayGrid}</div>;
-};
-
-export default DjikstraAnimatedView;
+export default DijkstraAnimatedView;
