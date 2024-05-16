@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./explore.module.css";
 import SortView from "../../sortSection/Sort.view";
+import NodejsView from "../../nodejsSection/Nodejs.view";
 
 const ExploreView = ({ concepts }) => {
   const conceptList = concepts.map((concept) => {
@@ -22,14 +23,14 @@ const ExploreView = ({ concepts }) => {
     );
   });
 
-  const sortConcept = concepts.find(
-    (item) => item.category === "Sort Algorithms"
-  );
+  const sortConcept = concepts.find((item) => item.category === "Sort Algorithms");
+  const nodejsConcept = concepts.find((item) => item.category === "Web Concepts");
 
   return (
     <div className={style.explore_container} id="explore">
       <h2>Explore</h2>
       <SortView conceptItems={sortConcept} />
+      <NodejsView conceptItems={nodejsConcept} />
       {/* {conceptList} */}
     </div>
   );
