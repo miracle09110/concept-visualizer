@@ -62,7 +62,26 @@ const concepts = [
   {
     category: "Web Concepts",
     // description: "Explore interactive visualizations of key web concepts including Server-Client architecture, REST API, and Webhooks. Enhance your understanding with engaging visuals.",
-    items: ["Server-Client", "REST API", "Webhook"],
+    items: [
+      {
+        title: "Server-Client",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/server-client",
+      },
+      {
+        title: "REST API",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/rest-api",
+      },
+      {
+        title: "Webhook",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/webhook",
+      },
+    ],
   },
 ];
 
