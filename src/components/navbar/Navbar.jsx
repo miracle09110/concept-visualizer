@@ -126,9 +126,10 @@ const Navbar = () => {
               </li>
               <div className="hidden group-hover:flex flex-col rounded p-6 z-20 bg-slate-800 text-secondary duration-300">
                 <div className="flex flex-col">
-                  <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                    <a href="">Server-Client</a>
-                  </h3>
+                  <Link to="/server-client" className="text-[0.6em] font-bold hover:underline mx-3">
+                    <h3>Client-Server</h3>
+                  </Link>
+
                   <h3 className="text-[0.6em] font-bold hover:underline mx-3">
                     <a href="">REST API</a>
                   </h3>
@@ -153,7 +154,7 @@ const Navbar = () => {
         <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal">
           <div className="flex-10">
             <ul className="flex mx-2 text-[1.2em]">
-              <Link spy={true} smooth={true} to="Home">
+              <Link spy={true} smooth={true} to="/">
                 <li className="mx-6 hover:text-secondary transition rounded border-b-2 border-slate-300 hover:border-secondary hover:shadow hover:bg-slate-800 cursor-pointer">
                   Home
                 </li>
@@ -266,9 +267,10 @@ const Navbar = () => {
                   </button>
                   <div className="hidden group-hover:flex flex-col rounded absolute w-[13rem] p-6 z-20 bg-slate-800 text-secondary duration-300">
                     <div className="flex flex-col">
-                      <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                        <a href="">Server-Client</a>
-                      </h3>
+                      <Link to="/server-client" className="text-[0.6em] font-bold hover:underline mx-3">
+                        <h3>Client-Server</h3>
+                      </Link>
+
                       <h3 className="text-[0.6em] font-bold hover:underline mx-3">
                         <a href="">REST API</a>
                       </h3>
