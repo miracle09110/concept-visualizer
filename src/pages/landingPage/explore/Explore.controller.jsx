@@ -20,30 +20,35 @@ const concepts = [
     items: [
       {
         title: "Bubble Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/bubble",
       },
       {
         title: "Selection Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/selection",
       },
       {
         title: "Insertion Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/insertion",
       },
       {
         title: "Quick Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/quick",
       },
       {
         title: "Merge Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/merge",
@@ -65,19 +70,16 @@ const concepts = [
     items: [
       {
         title: "Server-Client",
-        subtitle: "O(n^2)",
         image: "",
         link: "/server-client",
       },
       {
         title: "REST API",
-        subtitle: "O(n^2)",
         image: "",
         link: "/rest-api",
       },
       {
         title: "Webhook",
-        subtitle: "O(n^2)",
         image: "",
         link: "/webhook",
       },

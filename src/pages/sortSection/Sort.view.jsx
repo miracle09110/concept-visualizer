@@ -8,6 +8,7 @@ function SortView({ conceptItems }) {
       <Cards
         key={item.title}
         title={item.title}
+        label={item.label}
         subtitle={item.subtitle}
         image={item.image}
         link={item.link}
