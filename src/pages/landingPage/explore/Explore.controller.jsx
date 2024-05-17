@@ -70,16 +70,22 @@ const concepts = [
     items: [
       {
         title: "Server-Client",
+        label: "",
+        subtitle: "",
         image: "",
         link: "/server-client",
       },
       {
         title: "REST API",
+        label: "",
+        subtitle: "",
         image: "",
         link: "/rest-api",
       },
       {
         title: "Webhook",
+        label: "",
+        subtitle: "",
         image: "",
         link: "/webhook",
       },
