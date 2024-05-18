@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import style from "./SelectionSort.module.css";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ function bubbleSort(arr) {
   do {
     swapped = false;
     for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
+      if (arr[i].number > arr[i + 1].number) {
         let temp = arr[i];
         arr[i] = arr[i + 1];
         arr[i + 1] = temp;
@@ -28,13 +28,16 @@ function bubbleSort(arr) {
 }
 
 function SelectionSort() {
-  const [array, setArray] = useState([6, 42, 5, 10, 3, 27, -1, 29]);
+  const [array, setArray] = useState([]);
   const [ind1, setInd1] = useState(-1);
   const [ind2, setInd2] = useState(-1);
-  const [lowest, setLowest] = useState(null);
+  const [lowest, setLowest] = useState({});
   const [indexOfLowest, setIndexOfLowest] = useState(null);
   const [iteration, setIteration] = useState(null);
   const [commence, setCommence] = useState(false);
+  const [complete, setComplete] = useState(true);
+  const [ongoing, setOngoing] = useState(false);
+  const result = useMemo(() => bubbleSort([...array]), [array]);
 
   // proceeds to the next iteration by incrementing the previous ind1 by 1 so that the arranged digits will not be iterated again.
   useEffect(() => {
@@ -48,85 +51,80 @@ function SelectionSort() {
     }
 
     setInd1(iteration);
-    setInd2(iteration + 1);
+    setInd2(iteration);
     setLowest(array[iteration]);
     setIndexOfLowest(iteration);
   }, [iteration]);
 
+  function initialize(num = 8) {
+    const randomArray = [...Array(num)].map((_, index) => {
+      return {
+        id: index,
+        number: Math.floor(Math.random() * 50) - 10,
+      };
+    });
+    setArray(randomArray);
+  }
+
+  function handleReset() {
+    setInd1(-1);
+    setInd2(-1);
+    setComplete(true);
+    setOngoing(false);
+    initialize();
+  }
+
+  useEffect(() => {
+    initialize();
+  }, []);
+
   function start() {
     setCommence(true);
     setIteration(0);
+    setComplete(false);
+    setOngoing(true);
   }
 
+  useEffect(() => {
+    if (!ongoing) return;
+
+    const interval = setInterval(() => {
+      compare();
+    }, 750);
+
+    return () => clearInterval(interval);
+  }, [ongoing, ind1, ind2, array]);
+
   function compare() {
-    // const copy = [...array];
-
-    // if (ind2 >= array.length) {
-    //   return;
-    // }
-
-    // if (copy[ind2] <= lowest) {
-    //   setLowest(copy[ind2]);
-    //   setIndexOfLowest(ind2);
-    // }
-
-    // if (ind2 === array.length - 1) {
-    //   let temp = copy[ind1];
-    //   copy[ind1] = copy[indexOfLowest];
-    //   copy[indexOfLowest] = temp;
-
-    //   setArray(copy);
-    //   setIteration((i) => i + 1);
-    // } else {
-    //   setInd2((i) => i + 1);
-    // }
     const copy = [...array];
 
-    // if (
-    //   ind1 === array.length - 2 &&
-    //   ind2 === array.length - 1 &&
-    //   copy[ind2] <= lowest
-    // ) {
-    //   let temp = copy[ind1];
-    //   copy[ind1] = copy[indexOfLowest];
-    //   copy[indexOfLowest] = temp;
-    //   setCommence(false);
-    //   return;
-    // }
-
-    if (ind2 >= array.length) {
+    if (result.every((value, index) => value === copy[index])) {
+      setOngoing(false);
+      setComplete(true);
+      setInd1(-1);
+      setInd2(-1);
+      setLowest({});
       return;
     }
 
-    if (ind1 === array.length - 2 && ind2 === array.length - 1) {
-      if (copy[ind2] <= lowest) {
+    if (ind2 < array.length) {
+      if (copy[ind2].number <= lowest.number) {
+        setLowest(copy[ind2]);
+        setIndexOfLowest(ind2);
+      }
+      setInd2((i) => i + 1);
+    }
+
+    if (ind2 === array.length) {
+      if (indexOfLowest !== ind1) {
         let temp = copy[ind1];
         copy[ind1] = copy[indexOfLowest];
         copy[indexOfLowest] = temp;
       }
+
+      setArray(copy);
+      setIteration((i) => i + 1);
     }
-
-    // // if array[index 2] is lower than or equal to the current lowest, set it as the new lowest and store its index then proceed to next element. if array[index 2] is greater, just proceed to next element.
-    if (copy[ind2] <= lowest) {
-      setLowest(copy[ind2]);
-      setIndexOfLowest(ind2);
-      setInd2((i) => i + 1);
-    } else {
-      setInd2((i) => i + 1);
-    }
-
-    // if index 2 is at the last element and that element is greater than or equal to the lowest,
-    if (ind2 === array.length - 1 && copy[ind2] >= lowest) {
-      let temp = copy[ind1];
-      copy[ind1] = copy[indexOfLowest];
-      copy[indexOfLowest] = temp;
-
-      setTimeout(() => {
-        setIteration((i) => i + 1);
-      }, 500);
-    }
-
-    setArray((a) => [...copy]);
   }
 
   useEffect(() => {
@@ -138,7 +136,9 @@ function SelectionSort() {
       "lowest",
       lowest,
       "indexOfLowest",
-      indexOfLowest
+      indexOfLowest,
+      "result",
+      result
     );
   }, [ind1, ind2]);
 
@@ -149,33 +149,52 @@ function SelectionSort() {
         {array.map((item, index) => {
           return (
             <motion.div
-              key={item}
+              key={item.id}
               layout
               transition={spring}
               className={
                 ind1 === index || ind2 === index ? style.selected : style.digits
               }
+              style={{ backgroundColor: item === lowest && "lightcoral" }}
             >
-              {item}
+              {item.number}
             </motion.div>
           );
         })}
       </div>
-      <div style={{ marginTop: "16px" }}>
-        {!commence ? "Press Start" : `Lowest: ${lowest}`}
+      <div className={style.container} style={{ marginTop: "0px" }}>
+        Lowest:{" "}
+        <span
+          className={style.digits}
+          style={{ backgroundColor: "lightcoral" }}
+        >
+          {lowest.number ? lowest.number : <>&infin;</>}
+        </span>
       </div>
-      <div className={style.container}>
-        <button className={style.button} onClick={() => start()}>
-          start
+      <div className={style.btns}>
+        <button
+          disabled={!complete}
+          className={style.button}
+          onClick={() => start()}
+        >
+          Start
+        </button>
+        <button
+          disabled={ind1 === -1}
+          className={style.button}
+          onClick={() => setOngoing(!ongoing)}
+        >
+          {ongoing ? "Pause" : "Play"}
         </button>
         <button
           className={style.button}
-          onClick={() => setArray((a) => bubbleSort([...a]))}
+          onClick={compare}
+          disabled={complete || ongoing}
         >
-          sort
+          Next
         </button>
-        <button className={style.button} onClick={compare}>
-          next
+        <button className={style.button} onClick={handleReset}>
+          Restart
         </button>
       </div>
     </section>
