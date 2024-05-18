@@ -1,0 +1,57 @@
+.card {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(130, 130, 130);
+}
+
+.card_img {
+  display: none;
+  overflow: hidden;
+}
+
+.card_text {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #333333;
+}
+
+.card_title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card_icon {
+  width: 15%;
+  color: rgb(41, 39, 39);
+}
+
+@media screen and (min-width: 555px) {
+  .card {
+    width: auto;
+    height: 20rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card_img {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: rgb(128, 128, 128);
+  }
+
+  .card_text {
+    flex-grow: 0;
+  }
+
+  .card_icon {
+    display: none;
+  }
+}

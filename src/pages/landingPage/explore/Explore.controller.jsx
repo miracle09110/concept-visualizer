@@ -3,14 +3,9 @@ import ExploreView from "./Explore.view";
 
 const concepts = [
   {
-    category: "Algorithms",
+    category: "Search Algorithms",
     // description: "Discover and interact with popular sorting, search, and pathfinding algorithms. Enhance your understanding through hands-on exploration.",
     items: [
-      "Bubble Sort",
-      "Selection Sort",
-      "Insertion Sort",
-      "Quick Sort",
-      "Merge Sort",
       "Linear Search",
       "Depth first",
       "Width first",
@@ -18,10 +13,46 @@ const concepts = [
       "Binary Search",
       "Ternary Search",
       "Exponential Search",
-      "Cycle detection",
-      "Dijkstra’s algorithm",
-      "A* algorithm",
     ],
+  },
+  {
+    category: "Sort Algorithms",
+    items: [
+      {
+        title: "Bubble Sort",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/bubble",
+      },
+      {
+        title: "Selection Sort",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/selection",
+      },
+      {
+        title: "Insertion Sort",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/insertion",
+      },
+      {
+        title: "Quick Sort",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/quick",
+      },
+      {
+        title: "Merge Sort",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/merge",
+      },
+    ],
+  },
+  {
+    category: "Path Finding Algorithms",
+    items: ["Cycle detection", "Dijkstra’s algorithm", "A* algorithm"],
   },
   {
     category: "React Concepts",
@@ -31,7 +62,26 @@ const concepts = [
   {
     category: "Web Concepts",
     // description: "Explore interactive visualizations of key web concepts including Server-Client architecture, REST API, and Webhooks. Enhance your understanding with engaging visuals.",
-    items: ["Server-Client", "REST API", "Webhook"],
+    items: [
+      {
+        title: "Server-Client",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/server-client",
+      },
+      {
+        title: "REST API",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/rest-api",
+      },
+      {
+        title: "Webhook",
+        subtitle: "O(n^2)",
+        image: "",
+        link: "/webhook",
+      },
+    ],
   },
 ];
 
