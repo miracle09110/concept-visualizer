@@ -4,12 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import ServerClientAnimation from "./pages/ServerClient/ServerClient.view";
+import InsertionSortView from "./pages/InsertionSort/InsertionSort.view";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/bubble", element: null },
   { path: "/selection", element: null },
-  { path: "/insertion", element: null },
+  { path: "/insertion", element: <InsertionSortView /> },
   { path: "/quick", element: null },
   { path: "/merge", element: null },
   { path: "/linear", element: null },
