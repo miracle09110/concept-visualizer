@@ -33,7 +33,6 @@
   font-weight: 700;
   font-size: 1.5rem;
   text-shadow: 2px 1px #333;
-  border-radius: 50%;
 }
 
 .selected {
@@ -47,7 +46,6 @@
   font-weight: 700;
   font-size: 1.5rem;
   text-shadow: 2px 1px #333;
-  border-radius: 50%;
 }
 
 .btns {

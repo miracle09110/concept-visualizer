@@ -1,12 +1,12 @@
 import React from "react";
 import HeaderView from "./header/header.view";
 import ExploreController from "./explore/Explore.controller";
-import SelectionSort from "../SelectionSort/SelectionSort.view";
+import SelectionSortController from "../SelectionSort/SelectionSort.controller";
 
 const LandingPage = () => {
   return (
     <>
-      <SelectionSort />
+      <SelectionSortController />
       <HeaderView />
       <ExploreController />
     </>
