@@ -4,7 +4,16 @@ import Cards from "../../components/Cards/Cards.view";
 
 function SearchView({ conceptItems }) {
   const conceptCards = conceptItems.items.map((item) => {
-    return <Cards key={item.title} title={item.title} subtitle={item.subtitle} image={item.image} link={item.link} />;
+    return (
+      <Cards
+        key={item.title}
+        title={item.title}
+        label={item.label}
+        subtitle={item.subtitle}
+        image={item.image}
+        link={item.link}
+      />
+    );
   });
 
   return (

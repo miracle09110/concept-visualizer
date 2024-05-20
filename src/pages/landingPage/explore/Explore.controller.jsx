@@ -2,6 +2,9 @@ import React from "react";
 import ExploreView from "./Explore.view";
 import useContextImg from "/react-section/usecontext-img.png";
 import useStateImg from "/react-section/usestate-img.png";
+import serverClient from "../../nodejsSection/server-client.jpg";
+import restAPI from "../../nodejsSection/rest-api.jpg";
+import webHooks from "../../nodejsSection/webhooks.png";
 
 const concepts = [
   {
@@ -10,42 +13,49 @@ const concepts = [
     items: [
       {
         title: "Linear Search",
+        label: "Time Complexity:",
         subtitle: "O(n)",
         image: "",
         link: "/linear",
       },
       {
         title: "Depth first",
+        label: "Time Complexity:",
         subtitle: "O(V+E)",
         image: "",
         link: "/depth",
       },
       {
         title: "Width first",
+        label: "Time Complexity:",
         subtitle: "O(V+E)",
         image: "",
         link: "/width",
       },
       {
         title: "Jump Search",
+        label: "Time Complexity:",
         subtitle: "O(1)",
         image: "",
         link: "/jump",
       },
       {
         title: "Binary Search",
+        label: "Time Complexity:",
         subtitle: "O(logn)",
         image: "",
         link: "/binary",
       },
       {
         title: "Ternary Search",
+        label: "Time Complexity:",
         subtitle: "O(log3 N)",
         image: "",
         link: "/ternary",
       },
       {
         title: "Exponential Search",
+        label: "Time Complexity:",
         subtitle: "O(logn)",
         image: "",
         link: "/exponential",
@@ -57,30 +67,35 @@ const concepts = [
     items: [
       {
         title: "Bubble Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/bubble",
       },
       {
         title: "Selection Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/selection",
       },
       {
         title: "Insertion Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/insertion",
       },
       {
         title: "Quick Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/quick",
       },
       {
         title: "Merge Sort",
+        label: "Time Complexity:",
         subtitle: "O(n^2)",
         image: "",
         link: "/merge",
@@ -98,12 +113,14 @@ const concepts = [
     items: [
       {
         title: "State and Props",
+        label: "",
         subtitle: "Learn more about React states and props",
         image: useStateImg,
         link: "/states-props",
       },
       {
         title: "useContext",
+        label: "",
         subtitle: "Organize your React states with Context API",
         image: useContextImg,
         link: "/usecontext",
@@ -116,20 +133,23 @@ const concepts = [
     items: [
       {
         title: "Server-Client",
-        subtitle: "O(n^2)",
-        image: "",
+        label: "",
+        subtitle: "",
+        image: serverClient,
         link: "/server-client",
       },
       {
         title: "REST API",
-        subtitle: "O(n^2)",
-        image: "",
+        label: "",
+        subtitle: "",
+        image: restAPI,
         link: "/rest-api",
       },
       {
         title: "Webhook",
-        subtitle: "O(n^2)",
-        image: "",
+        label: "",
+        subtitle: "",
+        image: webHooks,
         link: "/webhook",
       },
     ],
