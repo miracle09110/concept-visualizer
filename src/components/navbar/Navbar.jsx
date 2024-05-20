@@ -129,7 +129,10 @@ const Navbar = () => {
               </li>
               <div className="hidden group-hover:flex flex-col rounded p-6 z-20 bg-slate-800 text-secondary duration-300">
                 <div className="flex flex-col">
-                  <Link to="/server-client" className="text-[0.6em] font-bold hover:underline mx-3">
+                  <Link
+                    to="/server-client"
+                    className="text-[0.6em] font-bold hover:underline mx-3"
+                  >
                     <h3>Client-Server</h3>
                   </Link>
 
@@ -184,12 +187,12 @@ const Navbar = () => {
                         >
                           Bubble Sort
                         </Link>
-                        <a
-                          href=""
+                        <Link
+                          to="/selection"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Selection Sort
-                        </a>
+                        </Link>
                         <a
                           href=""
                           className="hover:underline text-[0.5em] mx-3"
@@ -315,7 +318,10 @@ const Navbar = () => {
                   </button>
                   <div className="hidden group-hover:flex flex-col rounded absolute w-[13rem] p-6 z-20 bg-slate-800 text-secondary duration-300">
                     <div className="flex flex-col">
-                      <Link to="/server-client" className="text-[0.6em] font-bold hover:underline mx-3">
+                      <Link
+                        to="/server-client"
+                        className="text-[0.6em] font-bold hover:underline mx-3"
+                      >
                         <h3>Client-Server</h3>
                       </Link>
 
