@@ -34,9 +34,12 @@ const Navbar = () => {
                     <h3 className="text-[0.6em] font-bold hover:underline">
                       <a href="">Sorting</a>
                     </h3>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    <Link
+                      to="bubble"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Bubble Sort
-                    </a>
+                    </Link>
                     <a href="" className="hover:underline text-[0.5em] mx-3">
                       Selection Sort
                     </a>
