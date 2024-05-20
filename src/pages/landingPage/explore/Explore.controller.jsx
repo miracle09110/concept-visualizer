@@ -1,5 +1,7 @@
 import React from "react";
 import ExploreView from "./Explore.view";
+import useContextImg from "/react-section/usecontext-img.png";
+import useStateImg from "/react-section/usestate-img.png";
 
 const concepts = [
   {
@@ -61,8 +63,22 @@ const concepts = [
   },
   {
     category: "React Concepts",
-    // description: "Explore interactive visualizations to understand React's State, Props, and useContext feature. Enhance your React skills with engaging visuals.",
-    items: ["State and Props", "useContext"],
+    description:
+      "Explore interactive visualizations to understand React's State, Props, and useContext feature. Enhance your React skills with engaging visuals.",
+    items: [
+      {
+        title: "State and Props",
+        subtitle: "Learn more about React states and props",
+        image: useStateImg,
+        link: "/states-props",
+      },
+      {
+        title: "useContext",
+        subtitle: "Organize your React states with Context API",
+        image: useContextImg,
+        link: "/usecontext",
+      },
+    ],
   },
   {
     category: "Web Concepts",
