@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./explore.module.css";
 import SortView from "../../sortSection/Sort.view";
+import HeaderView from "../header/header.view";
 
 const ExploreView = ({ concepts }) => {
   const conceptList = concepts.map((concept) => {
@@ -27,11 +28,14 @@ const ExploreView = ({ concepts }) => {
   );
 
   return (
-    <div className={style.explore_container} id="explore">
-      <h2>Explore</h2>
-      <SortView conceptItems={sortConcept} />
-      {/* {conceptList} */}
-    </div>
+    <>
+      <HeaderView />
+      <div className={style.explore_container} id="explore">
+        <h2>Explore</h2>
+        <SortView conceptItems={sortConcept} />
+        {/* {conceptList} */}
+      </div>
+    </>
   );
 };
 
