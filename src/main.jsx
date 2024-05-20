@@ -6,6 +6,7 @@ import "./index.css";
 import ExploreController from "./pages/landingPage/explore/Explore.controller";
 import BubbleSortController from "./pages/BubbleSort/BubbleSort.controller";
 import ServerClientAnimation from "./pages/ServerClient/ServerClient.view";
+import SelectionSortController from "./pages/SelectionSort/SelectionSort.controller";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <ExploreController /> },
       { path: "/bubble", element: <BubbleSortController /> },
-      { path: "/selection", element: null },
+      { path: "/selection", element: <SelectionSortController /> },
       { path: "/insertion", element: null },
       { path: "/quick", element: null },
       { path: "/merge", element: null },
