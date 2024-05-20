@@ -1,11 +1,9 @@
 import React from "react";
 import style from "./header.module.css";
-import Navbar from "../../../components/navbar/Navbar";
 
 const HeaderView = () => {
   return (
     <>
-      <Navbar />
       <div className={style.header_section}>
         <div className={style.text_container}>
           <h1>
