@@ -7,7 +7,9 @@ const DijkstraAnimatedView = () => {
   const [visitedNodes, setVisitedNodes] = useState(new Set());
   const [shortestPath, setShortestPath] = useState([]);
   const [isAnimatingPath, setIsAnimatingPath] = useState(false);
-  const [dimension, setDimension] = useState(30);
+  const [dimension, setDimension] = useState(20);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+
   const createGridArray = (numberOfRows, numberOfColumns) => {
     const grid = [];
     for (let row = 0; row < numberOfRows; row++) {
@@ -131,11 +133,30 @@ const DijkstraAnimatedView = () => {
     }, 10); // Adjust animation speed (in milliseconds)
   };
 
+  const handleResetClick = () => {
+    setStartSquare([10, 5]);
+    setEndSquare([15, 18]);
+    setDimension(20);
+    setVisitedNodes(new Set());
+    setShortestPath([]);
+    setIsAnimatingPath(false);
+    const grid = createGridArray(20, 20);
+    setGridArray(grid);
+    renderGrid();
+  };
+
   const handleVisualizeClick = () => {
     setVisitedNodes(new Set());
     setShortestPath([]);
     setIsAnimatingPath(false);
     dijkstra();
+  };
+
+  const handleClearClick = () => {
+    setVisitedNodes(new Set());
+    setShortestPath([]);
+    setIsAnimatingPath(false);
+    setGridArray(gridArray);
   };
 
   const renderGrid = () => {
@@ -149,6 +170,20 @@ const DijkstraAnimatedView = () => {
         {createCells}
       </div>
     );
+  };
+
+  const handleCellHover = (row, col) => {
+    if (isMouseDown) {
+      handleCellClick(row, col);
+    }
+  };
+
+  const handleMouseDown = () => {
+    setIsMouseDown(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsMouseDown(false);
   };
 
   const createCells = gridArray.map((cell) => {
@@ -172,6 +207,9 @@ const DijkstraAnimatedView = () => {
       <button
         key={`${row}-${col}`}
         className={cellClassName}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseEnter={() => handleCellHover(row, col)}
         onClick={() => handleCellClick(row, col)}
       ></button>
     );
@@ -208,25 +246,89 @@ const DijkstraAnimatedView = () => {
     renderGrid();
   };
 
-  return (
-    <div className="mx-auto w-1/2">
-      {renderGrid()}
-      <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={handleVisualizeClick}
-        disabled={isAnimatingPath}
-      >
-        {isAnimatingPath
-          ? "Animating Path..."
-          : "Visualize Dijkstra's Algorithm"}
-      </button>
+  const handleStartSquareCoordinateChange = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const startSquareRow = data.get("startSquareRow");
+    const startSquareCol = data.get("startSquareCol");
+    setStartSquare([+startSquareRow, +startSquareCol]);
+    setGridArray(gridArray);
 
+    const grid = createGridArray(dimension, dimension);
+    setGridArray(grid);
+    renderGrid();
+  };
+
+  const handleEndSquareCoordinateChange = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const endSquareRow = data.get("endSquareRow");
+    const endSquareCol = data.get("endSquareCol");
+    setEndSquare([+endSquareRow, +endSquareCol]);
+    setGridArray(gridArray);
+    e.target.reset();
+
+    const grid = createGridArray(dimension, dimension);
+    setGridArray(grid);
+    renderGrid();
+  };
+
+  return (
+    <div
+      className="lg:mx-auto lg:flex items-center justify-center "
+    >
+      <div className="lg:w-1/2 lg:p-20">
+        {renderGrid()}
+        <div className="flex justify-between mx-3 items-center my-2">
+          <button
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            onClick={handleResetClick}
+          >
+          Default
+          </button>
+
+          <button
+            className=" bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            onClick={handleClearClick}
+          >
+            Clear
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={handleVisualizeClick}
+            disabled={isAnimatingPath}
+          >
+            Visualize
+          </button>
+        </div>
+      </div>
+
+      <div className="px-3 flex flex-col self-start lg:pt-20">
+      <header className=" mb-8">
+        <h1 className="text-3xl font-bold text-indigo-800">Dijkstra's Algorithm</h1>
+        <p className="text-lg text-gray-600">A shortest path algorithm for finding the shortest paths between nodes in a graph.</p>
+        <p className="text-lg text-gray-600">Click on cells to add/remove "obstacles"</p>
+    </header>
       <form onSubmit={handleChangeDimension}>
-        <input type="number" name="dimension" />
-        <button type="submit">change dimensions</button>
+      <label htmlFor="dimension" className="block text-gray-700 text-md font-bold mb-2"> Dimension (n x n) </label>
+        <input type="number" name="dimension" max={20} className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-3" required placeholder={dimension}/>
+        <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 border border-gray-400 rounded shadow text-sm">Update</button>
       </form>
 
-      <form action=""></form>
+      <form onSubmit={handleStartSquareCoordinateChange} className="mt-3">
+        <label htmlFor="startsquare" className="block text-gray-700 text-md font-bold mb-2"> Start Coordinates (row,col) </label>
+        <input className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-3" type="number" name="startSquareRow" placeholder={startSquare[0]} required max={20}/>
+        <input className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-3" type="number" name="startSquareCol" placeholder={startSquare[1]} required max={20}/>
+        <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 border border-gray-400 rounded shadow text-sm">Update</button>
+      </form>
+
+      <form onSubmit={handleEndSquareCoordinateChange} className="mt-3">
+        <label htmlFor="endsquare" className="block text-gray-700 text-md font-bold mb-2"> End Coordinates(row,col)</label>
+        <input  className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-3" type="number" name="endSquareRow" placeholder={endSquare[0]} required max={20}/>
+        <input  className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-3" type="number" name="endSquareCol" placeholder={endSquare[1]} required max={20}/>
+        <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 border border-gray-400 rounded shadow text-sm">Update</button>
+      </form>
+      </div>
     </div>
   );
 };
