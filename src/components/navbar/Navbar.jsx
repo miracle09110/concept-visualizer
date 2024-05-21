@@ -32,66 +32,108 @@ const Navbar = () => {
                 <div className="grid grid-cols-3 md-grid-cols-4 gap-5">
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <a href="">Sorting</a>
+                      <Link to="/">Sorting</Link>
                     </h3>
                     <Link
-                      to="bubble"
+                      to="/bubble"
                       className="hover:underline text-[0.5em] mx-3"
                     >
                       Bubble Sort
                     </Link>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    <Link
+                      to="/selection"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Selection Sort
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/insertion"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Insertion Sort
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/quick"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Quick Sort
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/merge"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Merge Sort
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <a href="">Searching</a>
+                      <Link to="/">Searching</Link>
                     </h3>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    <Link
+                      to="/linear"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Linear Search
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/depth"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Depth first
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/width"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Width first
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/jump"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Jump Search
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/binary"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Binary Search
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/ternary"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Ternary Search
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/exponential"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Exponential Search
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <a href="">More Algorithms</a>
+                      <Link to="/">More Algorithms</Link>
                     </h3>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    <Link
+                      to="/cycle-detection"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Cycle detection
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/dijkstra"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       Dijkstra’s algorithm
-                    </a>
-                    <a href="" className="hover:underline text-[0.5em] mx-3">
+                    </Link>
+                    <Link
+                      to="/a-star"
+                      className="hover:underline text-[0.5em] mx-3"
+                    >
                       A* algorithm
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -109,10 +151,10 @@ const Navbar = () => {
               <div className="hidden group-hover:flex flex-col rounded p-5 z-20 bg-slate-800 text-secondary duration-300">
                 <div className="flex flex-col">
                   <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                    <a href="">State and Props</a>
+                    <Link to="/state-props">State and Props</Link>
                   </h3>
                   <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                    <a href="">useContext</a>
+                    <Link to="/use-context">useContext</Link>
                   </h3>
                 </div>
               </div>
@@ -137,10 +179,10 @@ const Navbar = () => {
                   </Link>
 
                   <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                    <a href="">REST API</a>
+                    <Link to="/rest-api">REST API</Link>
                   </h3>
                   <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                    <a href="">Webhook</a>
+                    <Link to="/webhook">Webhook</Link>
                   </h3>
                 </div>
               </div>
@@ -179,7 +221,7 @@ const Navbar = () => {
                     <div className="grid grid-cols-3 md-grid-cols-4 gap-5">
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <a href="">Sorting</a>
+                          <Link to="#sort">Sorting</Link>
                         </h3>
                         <Link
                           to="/bubble"
@@ -199,88 +241,88 @@ const Navbar = () => {
                         >
                           Insertion Sort
                         </Link>
-                        <a
-                          href=""
+                        <Link
+                          to="/quick"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Quick Sort
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/merge"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Merge Sort
-                        </a>
+                        </Link>
                       </div>
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <a href="">Searching</a>
+                          <Link to="#search">Searching</Link>
                         </h3>
-                        <a
-                          href=""
+                        <Link
+                          to="/linear"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Linear Search
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/depth"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Depth first
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/width"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Width first
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/jump"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Jump Search
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/binary"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Binary Search
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/ternary"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Ternary Search
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/exponential"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Exponential Search
-                        </a>
+                        </Link>
                       </div>
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <a href="">More Algorithms</a>
+                          <Link to="/">More Algorithms</Link>
                         </h3>
-                        <a
-                          href=""
+                        <Link
+                          to="/cycle-detection"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Cycle detection
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/dijkstra"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Dijkstra’s algorithm
-                        </a>
-                        <a
-                          href=""
+                        </Link>
+                        <Link
+                          to="/a-star"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           A* algorithm
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -299,11 +341,11 @@ const Navbar = () => {
                   >
                     <div className="flex flex-col">
                       <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                        <a href="">State and Props</a>
+                        <Link to="/state-props">State and Props</Link>
                       </h3>
 
                       <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                        <a href="">useContext</a>
+                        <Link to="/use-context">useContext</Link>
                       </h3>
                     </div>
                   </div>
@@ -326,10 +368,10 @@ const Navbar = () => {
                       </Link>
 
                       <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                        <a href="">REST API</a>
+                        <Link to="/rest-api">REST API</Link>
                       </h3>
                       <h3 className="text-[0.6em] font-bold hover:underline mx-3">
-                        <a href="">Webhook</a>
+                        <Link to="/webhook">Webhook</Link>
                       </h3>
                     </div>
                   </div>
@@ -339,7 +381,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="block lg:hidden flex items-center">
+      <div className="block lg:hidden items-center">
         {click && content}
         <button className="transition bg:secondary mx-10" onClick={handleClick}>
           {click ? <FaTimes /> : <CiMenuFries />}
