@@ -193,12 +193,12 @@ const Navbar = () => {
                         >
                           Selection Sort
                         </Link>
-                        <a
-                          href=""
+                        <Link
+                          to="/insertion"
                           className="hover:underline text-[0.5em] mx-3"
                         >
                           Insertion Sort
-                        </a>
+                        </Link>
                         <a
                           href=""
                           className="hover:underline text-[0.5em] mx-3"

@@ -1,5 +1,6 @@
 import style from "./SelectionSort.module.css";
 import { motion } from "framer-motion";
+import { TbDiamondsFilled } from "react-icons/tb";
 
 function SelectionSortView({ settings }) {
   const {
@@ -16,9 +17,11 @@ function SelectionSortView({ settings }) {
     compare,
   } = settings;
 
+  const isMobile = document.body.clientWidth < 650;
+
   return (
     <section className={style.section}>
-      <h1>Selection Sort</h1>
+      <h1 className="mb-4">Selection Sort</h1>
       <div className={style.container}>
         {array.map((item, index) => {
           return (
@@ -31,13 +34,22 @@ function SelectionSortView({ settings }) {
               }
               style={{ backgroundColor: item === lowest && "lightcoral" }}
             >
+              <span
+                className={`${
+                  isMobile
+                    ? "absolute mr-28 text-orange-500"
+                    : "absolute mb-28 text-orange-500"
+                }`}
+              >
+                {ind1 === index && <TbDiamondsFilled size={40} />}
+              </span>
               {item.number}
             </motion.div>
           );
         })}
       </div>
       <div className={style.container} style={{ marginTop: "0px" }}>
-        Lowest:{" "}
+        Current Lowest:{" "}
         <span
           className={style.digits}
           style={{ backgroundColor: "lightcoral" }}

@@ -67,6 +67,10 @@ function SelectionSortController() {
   function handleReset() {
     setInd1(-1);
     setInd2(-1);
+    setLowest({});
+    setIndexOfLowest(null);
+    setIteration(null);
+    setCommence(false);
     setComplete(true);
     setOngoing(false);
     initialize();
