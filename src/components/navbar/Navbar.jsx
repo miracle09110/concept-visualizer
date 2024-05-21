@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -32,7 +33,7 @@ const Navbar = () => {
                 <div className="grid grid-cols-3 md-grid-cols-4 gap-5">
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <Link to="/">Sorting</Link>
+                      <HashLink to="/#sort">Sorting</HashLink>
                     </h3>
                     <Link
                       to="/bubble"
@@ -67,7 +68,7 @@ const Navbar = () => {
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <Link to="/">Searching</Link>
+                      <HashLink to="/#search">Searching</HashLink>
                     </h3>
                     <Link
                       to="/linear"
@@ -114,7 +115,7 @@ const Navbar = () => {
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-[0.6em] font-bold hover:underline">
-                      <Link to="/">More Algorithms</Link>
+                      <HashLink to="/#path-finding">Path Finding</HashLink>
                     </h3>
                     <Link
                       to="/cycle-detection"
@@ -139,7 +140,7 @@ const Navbar = () => {
               </div>
             </div>
           </Link>
-          <Link to="/">
+          <HashLink to="/#react">
             <div className="group">
               <li className="my-2 py-2 border-b border-primary hover:rounded hover:text-secondary hover:shadow hover:bg-slate-800">
                 <button className="hover:text-secondary border-b-2 border-slate-300 hover:bg-slate-800 transition rounded mx-2 cursor-pointer">
@@ -159,8 +160,8 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </Link>
-          <Link to="/">
+          </HashLink>
+          <HashLink to="/#nodejs">
             <div className="group">
               <li className="my-2 py-2 border-b border-primary hover:rounded hover:text-secondary hover:shadow hover:bg-slate-800">
                 <button className="hover:text-secondary border-b-2 border-slate-300 hover:bg-slate-800 transition rounded mx-2 cursor-pointer">
@@ -187,7 +188,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </Link>
+          </HashLink>
         </ul>
       </div>
     </>
@@ -221,7 +222,7 @@ const Navbar = () => {
                     <div className="grid grid-cols-3 md-grid-cols-4 gap-5">
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <Link to="#sort">Sorting</Link>
+                          <HashLink to="/#sort">Sorting</HashLink>
                         </h3>
                         <Link
                           to="/bubble"
@@ -256,7 +257,7 @@ const Navbar = () => {
                       </div>
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <Link to="#search">Searching</Link>
+                          <HashLink to="/#search">Searching</HashLink>
                         </h3>
                         <Link
                           to="/linear"
@@ -303,7 +304,7 @@ const Navbar = () => {
                       </div>
                       <div className="flex flex-col">
                         <h3 className="text-[0.6em] font-bold hover:underline">
-                          <Link to="/">More Algorithms</Link>
+                          <Link to="/#path-finding">Path Finding</Link>
                         </h3>
                         <Link
                           to="/cycle-detection"
@@ -328,7 +329,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </Link>
-              <Link to="/">
+              <HashLink to="/#react">
                 <div className="group">
                   <button className="hover:text-secondary border-b-2 border-slate-300 hover:bg-slate-800 transition rounded mx-6 cursor-pointer">
                     <span className="flex">
@@ -350,8 +351,8 @@ const Navbar = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
-              <Link to="/">
+              </HashLink>
+              <HashLink to="/#nodejs">
                 <div className="group">
                   <button className="hover:text-secondary border-b-2 border-slate-300 hover:bg-slate-800 transition rounded mx-6 cursor-pointer">
                     <span className="flex">
@@ -376,7 +377,7 @@ const Navbar = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </HashLink>
             </ul>
           </div>
         </div>
