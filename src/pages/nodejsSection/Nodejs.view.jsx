@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./sort.module.css";
+import style from "./nodejs.module.css";
 import Cards from "../../components/Cards/Cards.view";
 
-function SortView({ conceptItems }) {
+function NodejsView({ conceptItems }) {
   const conceptCards = conceptItems.items.map((item) => {
     return (
       <Cards
@@ -17,11 +17,11 @@ function SortView({ conceptItems }) {
   });
 
   return (
-    <section className={style.container} id="sort">
+    <section className={style.container} id="nodejs">
       <h1>{conceptItems.category}</h1>
       <div className={style.concept_container}>{conceptCards}</div>
     </section>
   );
 }
 
-export default SortView;
+export default NodejsView;
