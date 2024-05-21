@@ -5,6 +5,7 @@ import SearchView from "../../searchSection/Search.view";
 import NodejsView from "../../nodejsSection/Nodejs.view";
 import ReactView from "../../reactSection/React.view";
 import HeaderView from "../header/header.view";
+import { Link } from "react-router-dom";
 
 const ExploreView = ({ concepts }) => {
   const conceptList = concepts.map((concept) => {
@@ -17,7 +18,7 @@ const ExploreView = ({ concepts }) => {
         <div className={style.item_container}>
           {concept.items.map((item) => (
             <div key={item} className={style.item}>
-              <a>{item}</a>
+              <Link>{item}</Link>
               <div className={style.placeholder}></div>
             </div>
           ))}
@@ -40,13 +41,13 @@ const ExploreView = ({ concepts }) => {
   );
 
   return (
-    <div className={style.explore_container} id="explore">
+    <div className={style.explore_container}>
       <HeaderView />
-      <h2>Algorithms</h2>
-      <SearchView conceptItems={searchConcept} />
+      <h2 id="explore">Algorithms</h2>
       <SortView conceptItems={sortConcept} />
-      <NodejsView conceptItems={nodejsConcept} />
+      <SearchView conceptItems={searchConcept} />
       <ReactView conceptItems={reactConcept} />
+      <NodejsView conceptItems={nodejsConcept} />
 
       {/* {conceptList} */}
     </div>

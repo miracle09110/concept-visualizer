@@ -15,12 +15,12 @@ const Navbar = () => {
     <>
       <div className="lg:hidden z-50 block absolute top-16 w-full left-0 right-0 bg-primary backdrop-blur-lg bg-opcity-30 transition-300">
         <ul className="text-center text-xl p-5">
-          <Link spy={true} smooth={true} to="/">
+          <Link spy="true" smooth="true" to="/">
             <li className="my-2 py-2 border-b border-primary hover:rounded hover:text-secondary hover:shadow hover:bg-slate-800 ">
               Home
             </li>
           </Link>
-          <Link spy={true} smooth={true} to="/" className="">
+          <Link spy="true" smooth="true" to="/" className="">
             <div className="group">
               <li className="my-2 py-2 border-b border-primary hover:rounded hover:text-secondary hover:shadow hover:bg-slate-800">
                 <button>
@@ -203,7 +203,7 @@ const Navbar = () => {
         <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal">
           <div className="flex-10">
             <ul className="flex mx-2 text-[1.2em]">
-              <Link spy={true} smooth={true} to="/">
+              <Link spy="true" smooth="true" to="/">
                 <li className="mx-6 hover:text-secondary transition rounded border-b-2 border-slate-300 hover:border-secondary hover:shadow hover:bg-slate-800 cursor-pointer">
                   Home
                 </li>
