@@ -46,10 +46,9 @@ const ExploreView = ({ concepts }) => {
       <h2 id="explore">Algorithms</h2>
       <SortView conceptItems={sortConcept} />
       <SearchView conceptItems={searchConcept} />
+      <h2 id="react-web">React JS and Web Concepts</h2>
       <ReactView conceptItems={reactConcept} />
       <NodejsView conceptItems={nodejsConcept} />
-
-      {/* {conceptList} */}
     </div>
   );
 };

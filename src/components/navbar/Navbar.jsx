@@ -197,7 +197,9 @@ const Navbar = () => {
   return (
     <nav>
       <div className="flex items-center flex-1">
-        <span className="text-lg font-bold">Concept Visualizer</span>
+        <Link to="/">
+          <span className="text-lg font-bold">Concept Visualizer</span>
+        </Link>
       </div>
       <div className="h-10vh justify-between z-50 text-black lg:py-5 pl-9 ">
         <div className="hidden lg:flex lg:flex-1 items-center justify-end font-normal">
