@@ -8,6 +8,7 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
+      <HeaderView/>
       {/* <ExploreController /> */}
       <Outlet />
     </>
