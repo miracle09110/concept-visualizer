@@ -1,12 +1,16 @@
 import React from "react";
-import HeaderView from "./header/Header.view";
+import HeaderView from "./header/header.view";
 import ExploreController from "./explore/Explore.controller";
+import { Outlet } from "react-router";
+import Navbar from "../../components/navbar/Navbar";
 
 const LandingPage = () => {
   return (
     <>
-      <HeaderView />
-      <ExploreController/>
+      <Navbar />
+      <HeaderView/>
+      {/* <ExploreController /> */}
+      <Outlet />
     </>
   );
 };

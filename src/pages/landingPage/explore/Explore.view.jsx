@@ -1,5 +1,9 @@
 import React from "react";
 import style from "./explore.module.css";
+import SortView from "../../sortSection/Sort.view";
+import SearchView from "../../searchSection/Search.view";
+import NodejsView from "../../nodejsSection/Nodejs.view";
+import ReactView from "../../reactSection/React.view";
 
 const ExploreView = ({ concepts }) => {
   const conceptList = concepts.map((concept) => {
@@ -21,10 +25,20 @@ const ExploreView = ({ concepts }) => {
     );
   });
 
+  const sortConcept = concepts.find((item) => item.category === "Sort Algorithms");
+  const searchConcept = concepts.find((item) => item.category === "Search Algorithms");
+  const nodejsConcept = concepts.find((item) => item.category === "Web Concepts");
+  const reactConcept = concepts.find((item) => item.category === "React Concepts");
+
   return (
     <div className={style.explore_container} id="explore">
-      <h2>Explore</h2>
-      {conceptList}
+      <h2>Algorithms</h2>
+      <SearchView conceptItems={searchConcept} />
+      <SortView conceptItems={sortConcept} />
+      <NodejsView conceptItems={nodejsConcept} />
+      <ReactView conceptItems={reactConcept} />
+
+      {/* {conceptList} */}
     </div>
   );
 };
