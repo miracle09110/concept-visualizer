@@ -8,6 +8,8 @@ import BubbleSortController from "./pages/BubbleSort/BubbleSort.controller";
 import InsertionSortController from "./pages/InsertionSort/InsertionSort.controller";
 import ServerClientAnimation from "./pages/ServerClient/ServerClient.view";
 import SelectionSortController from "./pages/SelectionSort/SelectionSort.controller";
+import MissingPageView from "./pages/missingPage/MissingPage.view";
+import UnderDevelopmentView from "./pages/missingPage/UnderDevelopment.view";
 
 const router = createBrowserRouter([
   {
@@ -17,21 +19,24 @@ const router = createBrowserRouter([
       { path: "/bubble", element: <BubbleSortController /> },
       { path: "/selection", element: <SelectionSortController /> },
       { path: "/insertion", element: <InsertionSortController /> },
-      { path: "/quick", element: null },
-      { path: "/merge", element: null },
-      { path: "/linear", element: null },
-      { path: "/jump", element: null },
-      { path: "/binary", element: null },
-      { path: "/ternary", element: null },
-      { path: "/exponential", element: null },
-      { path: "/cycle-detection", element: null },
-      { path: "/dijkstra", element: null },
-      { path: "/a-star", element: null },
-      { path: "/state-props", element: null },
-      { path: "/use-context", element: null },
+      { path: "/quick", element: <UnderDevelopmentView /> },
+      { path: "/merge", element: <UnderDevelopmentView /> },
+      { path: "/linear", element: <UnderDevelopmentView /> },
+      { path: "/width", element: <UnderDevelopmentView /> },
+      { path: "/depth", element: <UnderDevelopmentView /> },
+      { path: "/jump", element: <UnderDevelopmentView /> },
+      { path: "/binary", element: <UnderDevelopmentView /> },
+      { path: "/ternary", element: <UnderDevelopmentView /> },
+      { path: "/exponential", element: <UnderDevelopmentView /> },
+      { path: "/cycle-detection", element: <UnderDevelopmentView /> },
+      { path: "/dijkstra", element: <UnderDevelopmentView /> },
+      { path: "/a-star", element: <UnderDevelopmentView /> },
+      { path: "/state-props", element: <UnderDevelopmentView /> },
+      { path: "/use-context", element: <UnderDevelopmentView /> },
       { path: "/server-client", element: <ServerClientAnimation /> },
-      { path: "/rest-api", element: null },
-      { path: "/webhook", element: null },
+      { path: "/rest-api", element: <UnderDevelopmentView /> },
+      { path: "/webhook", element: <UnderDevelopmentView /> },
+      { path: "*", element: <MissingPageView /> },
     ],
   },
 ]);

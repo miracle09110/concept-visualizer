@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function ReactView({ conceptItems }) {
   const conceptCards = conceptItems.items.map((item) => {
     return (
-      <Link to={item.link} className={style.card}>
+      <Link key={item.link} to={item.link} className={style.card}>
         <div className={style.card_img}>
           <img src={item.image} alt={item.title} />
         </div>

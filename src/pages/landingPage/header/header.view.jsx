@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./header.module.css";
+import { HashLink } from "react-router-hash-link";
 
 const HeaderView = () => {
   return (
@@ -13,9 +14,9 @@ const HeaderView = () => {
             Interactive Tools for Understanding Complex Algorithms, ReactJS and
             Web Development Concepts
           </h3>
-          <a href="#explore">
+          <HashLink to="/#explore">
             <button>Explore!</button>
-          </a>
+          </HashLink>
         </div>
       </div>
     </>
