@@ -8,9 +8,11 @@ import BubbleSortController from "./pages/BubbleSort/BubbleSort.controller";
 import InsertionSortController from "./pages/InsertionSort/InsertionSort.controller";
 import ServerClientAnimation from "./pages/ServerClient/ServerClient.view";
 import SelectionSortController from "./pages/SelectionSort/SelectionSort.controller";
+import DijkstraAnimatedView from "./pages/dijkstrasAnimatedPage/DjikstraAnimeted.view";
 
 const router = createBrowserRouter([
   {
+    path:"/",
     element: <App />,
     children: [
       { path: "/", element: <ExploreController /> },
@@ -25,13 +27,14 @@ const router = createBrowserRouter([
       { path: "/ternary", element: null },
       { path: "/exponential", element: null },
       { path: "/cycle-detection", element: null },
-      { path: "/dijkstra", element: null },
+      {path:"/dijkstra", element: <DijkstraAnimatedView/>},
       { path: "/a-star", element: null },
       { path: "/state-props", element: null },
       { path: "/use-context", element: null },
       { path: "/server-client", element: <ServerClientAnimation /> },
       { path: "/rest-api", element: null },
       { path: "/webhook", element: null },
+
     ],
   },
 ]);

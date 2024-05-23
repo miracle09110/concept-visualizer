@@ -277,7 +277,7 @@ const DijkstraAnimatedView = () => {
     <div
       className="lg:mx-auto lg:flex items-center justify-center "
     >
-      <div className="lg:w-1/2 lg:p-20">
+      <div className="lg:w-1/2 lg:p-20 lg:pt-5">
         {renderGrid()}
         <div className="flex justify-between mx-3 items-center my-2">
           <button
@@ -303,7 +303,7 @@ const DijkstraAnimatedView = () => {
         </div>
       </div>
 
-      <div className="px-3 flex flex-col self-start lg:pt-20">
+      <div className="px-3 flex flex-col self-start lg:pt-5">
       <header className=" mb-8">
         <h1 className="text-3xl font-bold">Dijkstra's Algorithm</h1>
         <p className="text-lg text-gray-600">A shortest path algorithm for finding the shortest paths between nodes in a graph.</p>
