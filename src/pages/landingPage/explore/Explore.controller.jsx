@@ -5,6 +5,7 @@ import useStateImg from "/react-section/usestate-img.png";
 import serverClient from "../../nodejsSection/server-client.jpg";
 import restAPI from "../../nodejsSection/rest-api.jpg";
 import webHooks from "../../nodejsSection/webhooks.png";
+import HeaderView from "../header/header.view";
 
 const concepts = [
   {
@@ -157,7 +158,12 @@ const concepts = [
 ];
 
 const ExploreController = () => {
-  return <ExploreView concepts={concepts} />;
+  return (
+    <>
+      <HeaderView></HeaderView>
+      <ExploreView concepts={concepts} />;
+    </>
+  );
 };
 
 export default ExploreController;
