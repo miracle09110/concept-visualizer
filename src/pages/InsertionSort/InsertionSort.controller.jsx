@@ -60,6 +60,7 @@ function InsertionSortController() {
     setCommence(true);
     setInd1(0);
     setInd2(1);
+    setIteration(0);
     setComplete(false);
     setOngoing(true);
   }

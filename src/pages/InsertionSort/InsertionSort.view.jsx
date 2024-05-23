@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import style from "./insertionSort.module.css";
+import { TbDiamondsFilled } from "react-icons/tb";
 
 function InsertionSortView({ settings }) {
   const {
@@ -16,25 +17,50 @@ function InsertionSortView({ settings }) {
     compare,
   } = settings;
 
+  const isMobile = document.body.clientWidth < 650;
+
   return (
     <section className={style.section}>
       <h1>Insertion Sort</h1>
-      <div className={style.container}>
-        {array.map((item, index) => {
-          return (
-            <motion.div
-              key={item.id}
-              layout
-              transition={spring}
-              className={
-                ind1 === index || ind2 === index ? style.selected : style.digits
-              }
-              style={{ backgroundColor: index === iteration && "lightcoral" }}
-            >
-              {item.number}
-            </motion.div>
-          );
-        })}
+      <div className="flex pr-12 min-[650px]:flex-col min-[650px]:pr-0">
+        <div
+          className={style.container}
+          style={{ marginBottom: !isMobile ? 0 : "2rem" }}
+        >
+          {[...Array(array.length)].map((_, index) => {
+            return (
+              <div
+                className={style.digits}
+                style={{ backgroundColor: "transparent" }}
+              >
+                {iteration === index && (
+                  <TbDiamondsFilled size={40} color="orange" />
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <div
+          className={style.container}
+          style={{ marginTop: !isMobile ? 0 : "2rem" }}
+        >
+          {array.map((item, index) => {
+            return (
+              <motion.div
+                key={item.id}
+                layout
+                transition={spring}
+                className={
+                  ind1 === index || ind2 === index
+                    ? style.selected
+                    : style.digits
+                }
+              >
+                {item.number}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
       <div className={style.btns}>
         <button
