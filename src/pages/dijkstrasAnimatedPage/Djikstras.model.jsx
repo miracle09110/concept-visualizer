@@ -1,41 +1,25 @@
-const createGridArray = (numberOfRows, numberOfColumns) => {
-  const grid = [];
-  for (let row = 0; row < numberOfRows; row++) {
-    for (let column = 0; column < numberOfColumns; column++) {
-      grid.push({ coordinates: [row, column], type: "cell" });
+class DijkstraModel {
+  constructor(dimension) {
+    this.dimension = dimension;
+    this.gridArray = this.createGridArray();
+    this.startSquare = [10, 5];
+    this.endSquare = [15, 18];
+    this.visitedNodes = new Set();
+    this.shortestPath = [];
+    this.isAnimatingPath = false;
+  }
+
+  createGridArray(row, col) {
+    const grid = [];
+    for (let row = 0; row < numberOfRows; row++) {
+      for (let column = 0; column < numberOfColumns; column++) {
+        grid.push({ coordinates: [row, column], type: "cell" });
+      }
     }
-  }
-  return grid;
-};
-
-const dijkstra = (gridArray, startSquare, endSquare, dimension) => {
-  const graph = {}; // Construct graph with neighbors (adjacency list)
-  for (const item of gridArray) {
-    const [row, col] = item.coordinates;
-    const neighbors = [];
-    if (row > 0) neighbors.push(`${row - 1}-${col}`); // Top neighbor
-    if (row < dimension - 1) neighbors.push(`${row + 1}-${col}`); // Bottom neighbor
-    if (col > 0) neighbors.push(`${row}-${col - 1}`); // Left neighbor
-    if (col < dimension - 1) neighbors.push(`${row}-${col + 1}`); // Right neighbor
-    graph[`${row}-${col}`] = neighbors;
+    return grid;
   }
 
-  console.log(gridArray);
-
-  const distances = {}; // Distances from startSquare to each node
-  const previous = {}; // Previous node in the shortest path
-  for (const item of gridArray) {
-    const [row, col] = item.coordinates;
-    const key = `${row}-${col}`;
-    distances[key] =
-      key === `${startSquare[0]}-${startSquare[1]}` ? 0 : Infinity;
-    previous[key] = null;
-  }
-
-  const unvisited = new Set(Object.keys(distances));
-  console.log(unvisited);
-
-  const animateDijkstra = () => {
+  dijkstra() {
     const animate = setInterval(() => {
       if (unvisited.size === 0) {
         clearInterval(animate);
@@ -60,9 +44,9 @@ const dijkstra = (gridArray, startSquare, endSquare, dimension) => {
         traceShortestPath(currentNode); // Trigger path tracing
       }
 
-      for (const neighbor of graph[currentNode]) {
-        const [row, col] = neighbor.split("-");
-        const neighborKey = `${row}-${col}`;
+      for (const neighbor of graph[currentNode] || []) {
+        const [neighborRow, neighborCol] = neighbor.split("-");
+        const neighborKey = `${neighborRow}-${neighborCol}`;
         const distance = distances[currentNode] + 1;
         if (distance < distances[neighborKey]) {
           distances[neighborKey] = distance;
@@ -70,18 +54,25 @@ const dijkstra = (gridArray, startSquare, endSquare, dimension) => {
         }
       }
     }, 10); // Adjust animation speed (in milliseconds)
-  };
+  }
 
-  const traceShortestPath = (endNode) => {
-    const path = [];
-    let current = endNode;
-    while (current !== null) {
-      path.unshift(current);
-      current = previous[current];
-    }
-    setShortestPath(path);
-    animateShortestPath(path); // Initiate path animation
-  };
+  reset() {
+  }
 
-  animateDijkstra();
-};
+  clear() {
+  }
+
+  updateGridArray(row, col) {
+  }
+
+  setStartSquare(row, col) {
+  }
+
+  setEndSquare(row, col) {
+  }
+
+  setDimension(newDimension) {
+  }
+}
+
+export default DijkstraModel;

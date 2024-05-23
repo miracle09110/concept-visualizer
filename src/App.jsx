@@ -5,7 +5,6 @@ import DjikstraAnimetedView from './pages/dijkstrasAnimatedPage/DjikstraAnimeted
 const App = () => {
   return (
     <>
-      <DjikstraAnimetedView/>
       <LandingPage/>
     </>
   )

@@ -305,7 +305,7 @@ const DijkstraAnimatedView = () => {
 
       <div className="px-3 flex flex-col self-start lg:pt-20">
       <header className=" mb-8">
-        <h1 className="text-3xl font-bold text-indigo-800">Dijkstra's Algorithm</h1>
+        <h1 className="text-3xl font-bold">Dijkstra's Algorithm</h1>
         <p className="text-lg text-gray-600">A shortest path algorithm for finding the shortest paths between nodes in a graph.</p>
         <p className="text-lg text-gray-600">Click on cells to add/remove "obstacles"</p>
     </header>
