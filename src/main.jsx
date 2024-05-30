@@ -8,7 +8,7 @@ import BubbleSortController from "./pages/BubbleSort/BubbleSort.controller";
 import InsertionSortController from "./pages/InsertionSort/InsertionSort.controller";
 import ServerClientAnimation from "./pages/ServerClient/ServerClient.view";
 import SelectionSortController from "./pages/SelectionSort/SelectionSort.controller";
-import DijkstraAnimatedView from "./pages/dijkstrasAnimatedPage/DjikstraAnimeted.view";
+import DijkstraAnimatedView from "./pages/dijkstrasAnimatedPage/Djikstra.controller";
 import MissingPageView from "./pages/missingPage/MissingPage.view";
 import UnderDevelopmentView from "./pages/missingPage/UnderDevelopment.view";
 

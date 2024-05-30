@@ -42,7 +42,6 @@ const ExploreView = ({ concepts }) => {
 
   return (
     <div className={style.explore_container}>
-      <HeaderView />
       <h2 id="explore">Algorithms</h2>
       <SortView conceptItems={sortConcept} />
       <SearchView conceptItems={searchConcept} />
