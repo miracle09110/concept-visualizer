@@ -1,12 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router";
-import Navbar from "../../components/navbar/Navbar";
+import NavbarController from "../../components/navbar/Navbar.controller";
+import FooterController from "../../components/footer/Footer.controller";
 
 const LandingPage = () => {
   return (
     <>
-      <Navbar />
+      <NavbarController />
       <Outlet />
+      <FooterController />
     </>
   );
 };
