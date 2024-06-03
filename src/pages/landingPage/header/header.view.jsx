@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 const HeaderView = () => {
   return (
     <>
-      <div className="bg-[#363B4E]">
+      <div className="bg-gradient-to-b from-[#FF76CE] to-white h-screen">
         <div className={style.text_container}>
           <h1>
             Concept Visualizers: Explore Algorithms, React, and Web Dev Concepts

@@ -1,59 +1,27 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { IoIosArrowDropdown } from "react-icons/io";
-import { FaTimes } from "react-icons/fa";
+import React from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { HashLink } from "react-router-hash-link";
+import MenuList from "./MenuList";
+
+// bg-[#363B4E]
 
 const NavbarView = ({ conceptLinks }) => {
-  const concepts = conceptLinks.map((item) => {
-    return (
-      <li key={item.category}>
-        {item.children ? (
-          <details>
-            <summary>{item.category}</summary>
-            <ul>
-              <li>Sort</li>
-            </ul>
-          </details>
-        ) : (
-          <HashLink to={item.link}>{item.category}</HashLink>
-        )}
-      </li>
-    );
-  });
-
+  console.log(conceptLinks);
   return (
-    <div className="h-16 flex justify-between items-center bg-[#FF76CE]">
+    <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-[#363B4E]">
       <div className="flex flex-1">
-        <Link to={"/"} className="btn btn-ghost text-xl font-bold">
-          Concept Visualizer
-        </Link>
+        <HashLink
+          to={"/"}
+          className="bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-2xl font-bold font-fugaz pl-4"
+        >
+          CONCEPT VISUALIZER
+        </HashLink>
       </div>
+      {/* Menu for large screen */}
       <div className="hidden lg:flex items-center">
-        <ul className="menu menu-horizontal">
-          {concepts}
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <MenuList list={conceptLinks} />
       </div>
+      {/* Menu for mobile */}
       <div className="flex">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -63,23 +31,7 @@ const NavbarView = ({ conceptLinks }) => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 right-0"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            <MenuList list={conceptLinks} />
           </ul>
         </div>
       </div>

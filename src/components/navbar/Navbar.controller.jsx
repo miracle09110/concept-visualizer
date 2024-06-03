@@ -4,7 +4,7 @@ import NavbarView from "./Navbar.view";
 function NavbarController() {
   const algorithmLinks = [
     {
-      category: "Sort Algorithms",
+      name: "Sort Algorithms",
       link: "/#sort",
       children: [
         {
@@ -30,7 +30,7 @@ function NavbarController() {
       ],
     },
     {
-      category: "Search Algorithms",
+      name: "Search Algorithms",
       link: "/#search",
       children: [
         {
@@ -56,7 +56,7 @@ function NavbarController() {
       ],
     },
     {
-      category: "Path Finding Algorithms",
+      name: "Path Finding Algorithms",
       link: "/#path-finding",
       children: [
         {
@@ -77,12 +77,12 @@ function NavbarController() {
 
   const conceptLinks = [
     {
-      category: "Algorithms",
+      name: "Algorithms",
       link: "/#sort",
       children: [...algorithmLinks],
     },
     {
-      category: "React Concepts",
+      name: "React Concepts",
       link: "/#react",
       children: [
         {
@@ -96,7 +96,7 @@ function NavbarController() {
       ],
     },
     {
-      category: "Web Concepts",
+      name: "Web Concepts",
       link: "/#nodejs",
       children: [
         {

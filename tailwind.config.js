@@ -5,6 +5,9 @@ export default {
  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
  theme: {
   extend: {
+    fontFamily: {
+      'fugaz': ["Fugaz One", "sans-serif"]
+    }
   //  colors: {
   //   primary: "#FF76CE",
   //   secondary: "#FDFFC2",
