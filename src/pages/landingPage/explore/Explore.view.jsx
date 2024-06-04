@@ -1,32 +1,10 @@
 import React from "react";
-import style from "./explore.module.css";
 import SortView from "../../sortSection/Sort.view";
 import SearchView from "../../searchSection/Search.view";
 import NodejsView from "../../nodejsSection/Nodejs.view";
 import ReactView from "../../reactSection/React.view";
-import HeaderView from "../header/header.view";
-import { Link } from "react-router-dom";
 
 const ExploreView = ({ concepts }) => {
-  const conceptList = concepts.map((concept) => {
-    return (
-      <div key={concept.category} className={style.card}>
-        <h3 className={style.main_text} key={concept.category}>
-          {concept.category}
-        </h3>
-
-        <div className={style.item_container}>
-          {concept.items.map((item) => (
-            <div key={item} className={style.item}>
-              <Link>{item}</Link>
-              <div className={style.placeholder}></div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  });
-
   const sortConcept = concepts.find(
     (item) => item.category === "Sort Algorithms"
   );
@@ -41,11 +19,9 @@ const ExploreView = ({ concepts }) => {
   );
 
   return (
-    <div className={style.explore_container}>
-      <h2 id="explore">Algorithms</h2>
+    <div id="explore">
       <SortView conceptItems={sortConcept} />
       <SearchView conceptItems={searchConcept} />
-      <h2 id="react-web">React JS and Web Concepts</h2>
       <ReactView conceptItems={reactConcept} />
       <NodejsView conceptItems={nodejsConcept} />
     </div>

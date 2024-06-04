@@ -3,16 +3,14 @@ import { CiMenuFries } from "react-icons/ci";
 import { HashLink } from "react-router-hash-link";
 import MenuList from "./MenuList";
 
-// bg-[#363B4E]
-
 const NavbarView = ({ conceptLinks }) => {
   console.log(conceptLinks);
   return (
-    <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-[#363B4E]">
+    <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-[#363B4E] border-b border-slate-600 shadow-md z-20">
       <div className="flex flex-1">
         <HashLink
           to={"/"}
-          className="bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-2xl font-bold font-fugaz pl-4"
+          className="text-white text-xl font-bold font-fugaz pl-4"
         >
           CONCEPT VISUALIZER
         </HashLink>
@@ -22,9 +20,9 @@ const NavbarView = ({ conceptLinks }) => {
         <MenuList list={conceptLinks} />
       </div>
       {/* Menu for mobile */}
-      <div className="flex">
+      <div className="flex text-white">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="lg:hidden">
             <CiMenuFries />
           </div>
           <ul

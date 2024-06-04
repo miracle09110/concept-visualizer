@@ -18,7 +18,10 @@ function ReactView({ conceptItems }) {
   });
 
   return (
-    <section className={style.container} id="react">
+    <section
+      className="bg-[#222831] text-slate-200 flex items-center p-20"
+      id="react"
+    >
       <h1>{conceptItems.category}</h1>
       <p>{conceptItems.description}</p>
       <div className={style.concept_container}>{conceptCards}</div>

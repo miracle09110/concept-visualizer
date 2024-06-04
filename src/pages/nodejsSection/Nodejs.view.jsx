@@ -17,7 +17,10 @@ function NodejsView({ conceptItems }) {
   });
 
   return (
-    <section className={style.container} id="nodejs">
+    <section
+      className="bg-[#222831] text-slate-200 flex items-center p-20"
+      id="nodejs"
+    >
       <h1>{conceptItems.category}</h1>
       <div className={style.concept_container}>{conceptCards}</div>
     </section>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function MenuItem({ item }) {
   return (
-    <li>
+    <li className="text-white">
       <details>
         <summary>
           <Link to={item.link}>{item.name}</Link>

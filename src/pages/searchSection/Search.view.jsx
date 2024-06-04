@@ -17,7 +17,10 @@ function SearchView({ conceptItems }) {
   });
 
   return (
-    <section className={style.container} id="search">
+    <section
+      className="bg-[#222831] text-slate-200 flex items-center p-20"
+      id="search"
+    >
       <h1>{conceptItems.category}</h1>
       <div className={style.concept_container}>{conceptCards}</div>
     </section>
