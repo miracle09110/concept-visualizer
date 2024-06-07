@@ -9,7 +9,8 @@ const NavbarView = ({ conceptLinks }) => {
     <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-[#363B4E] border-b border-slate-600 shadow-md z-20">
       <div className="flex flex-1">
         <HashLink
-          to={"/"}
+          smooth
+          to={"/#header"}
           className="text-white text-xl font-bold font-fugaz pl-4"
         >
           CONCEPT VISUALIZER
