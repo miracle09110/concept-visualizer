@@ -1,4 +1,5 @@
 import daisyui from 'daisyui';
+// import heropatterns from '@lorenzopalaia/tailwind-hero-patterns'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -18,5 +19,6 @@ export default {
  },
  plugins: [
   daisyui,
+  require('@lorenzopalaia/tailwind-hero-patterns')
  ],
 };

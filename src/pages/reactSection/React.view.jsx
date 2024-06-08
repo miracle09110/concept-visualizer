@@ -18,7 +18,7 @@ function ReactView({ conceptItems }) {
 
   return (
     <section
-      className="bg-[#222831] text-slate-200 flex flex-col items-center p-20 justify-center h-screen"
+      className="text-slate-200 flex flex-col items-center p-20 justify-center h-screen"
       id="react"
     >
       <div className="flex flex-col items-center mb-16">

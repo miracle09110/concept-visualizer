@@ -18,7 +18,7 @@ function SortView({ conceptItems }) {
 
   return (
     <section
-      className="bg-[#222831] text-slate-200 flex flex-col justify-center items-center p-20 h-screen"
+      className="text-slate-200 flex flex-col justify-center items-center p-20 h-screen"
       id="sort"
     >
       <div className="flex flex-col items-center mb-16">

@@ -6,7 +6,7 @@ import MenuList from "./MenuList";
 const NavbarView = ({ conceptLinks }) => {
   console.log(conceptLinks);
   return (
-    <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-gradient-to-r from-[#FF76CE] to-[#dd55ad] border-b border-neutral-400 shadow-md z-20">
+    <div className="fixed w-full h-16 px-4 flex justify-between items-center bg-gradient-to-r from-[#FF76CE] to-[#dd55ad] shadow-md z-20">
       <div className="flex flex-1">
         <HashLink
           smooth
