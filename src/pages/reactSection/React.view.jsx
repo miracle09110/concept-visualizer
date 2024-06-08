@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./react.module.css";
 import Cards from "../../components/Cards/Cards.view";
 import { FaCircle } from "react-icons/fa";
 

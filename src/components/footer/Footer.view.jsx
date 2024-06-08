@@ -11,7 +11,7 @@ function FooterView({ links }) {
   });
 
   return (
-    <footer className="footer flex justify-between items-center gap-4 text-neutral-content bg-[#222831] border-t border-neutral-700">
+    <footer className="footer flex justify-between items-center gap-4 text-neutral-300 text-sm bg-[#222831] border-t border-neutral-700">
       <aside className="flex flex-1 items-center gap-3 pl-4">
         <img src={UpliftLogo} alt="Uplift Code Camp Logo" width={24} />
         <p>Copyright © 2024 - All right reserved</p>
