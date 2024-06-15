@@ -3,7 +3,7 @@ import { FaQuestion } from "react-icons/fa";
 
 function MissingPageView() {
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-slate-100 text-2xl text-center text-neutral-300">
+    <div className="h-screen flex flex-col justify-center items-center text-2xl text-center text-neutral-300">
       <span>
         <FaQuestion size={60} />
       </span>

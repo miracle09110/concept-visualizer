@@ -25,10 +25,12 @@ function ReactView({ conceptItems }) {
         <div className="my-8 animate-bounce text-[#A3D8FF]">
           <FaCircle />
         </div>
-        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent">
+        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-center">
           {conceptItems.category}
         </p>
-        <p className="w-3/5 text-center">{conceptItems.description}</p>
+        <p className="w-full md:w-3/5 text-center mt-4">
+          {conceptItems.description}
+        </p>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4">
         {conceptCards}

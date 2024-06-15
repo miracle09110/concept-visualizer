@@ -25,10 +25,12 @@ function NodejsView({ conceptItems }) {
         <div className="my-8 animate-bounce text-[#FDFFC2]">
           <FaCircle />
         </div>
-        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent">
+        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-center">
           {conceptItems.category}
         </p>
-        <p>Learn how sorting works</p>
+        <p className="w-full md:w-3/5 text-center mt-4">
+          {conceptItems.description}
+        </p>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4">
         {conceptCards}
