@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./search.module.css";
+import { FaCircle } from "react-icons/fa";
 import Cards from "../../components/Cards/Cards.view";
 
 function SearchView({ conceptItems }) {
@@ -17,9 +17,24 @@ function SearchView({ conceptItems }) {
   });
 
   return (
-    <section className={style.container} id="search">
-      <h1>{conceptItems.category}</h1>
-      <div className={style.concept_container}>{conceptCards}</div>
+    <section
+      className="text-slate-200 flex flex-col justify-center items-center p-20 h-screen"
+      id="search"
+    >
+      <div className="flex flex-col items-center mb-16">
+        <div className="my-8 animate-bounce text-[#94FFD8]">
+          <FaCircle />
+        </div>
+        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-center">
+          {conceptItems.category}
+        </p>
+        <p className="w-full md:w-3/5 text-center mt-4">
+          {conceptItems.description}
+        </p>
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        {conceptCards}
+      </div>
     </section>
   );
 }

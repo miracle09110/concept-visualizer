@@ -1,27 +1,40 @@
 import React from "react";
-import style from "./react.module.css";
-import { Link } from "react-router-dom";
+import Cards from "../../components/Cards/Cards.view";
+import { FaCircle } from "react-icons/fa";
 
 function ReactView({ conceptItems }) {
   const conceptCards = conceptItems.items.map((item) => {
     return (
-      <Link key={item.link} to={item.link} className={style.card}>
-        <div className={style.card_img}>
-          <img src={item.image} alt={item.title} />
-        </div>
-        <div className={style.card_text}>
-          <h1>{item.title}</h1>
-          <p>{item.subtitle}</p>
-        </div>
-      </Link>
+      <Cards
+        key={item.title}
+        title={item.title}
+        label={item.label}
+        subtitle={item.subtitle}
+        image={item.image}
+        link={item.link}
+      />
     );
   });
 
   return (
-    <section className={style.container} id="react">
-      <h1>{conceptItems.category}</h1>
-      <p>{conceptItems.description}</p>
-      <div className={style.concept_container}>{conceptCards}</div>
+    <section
+      className="text-slate-200 flex flex-col items-center p-20 justify-center h-screen"
+      id="react"
+    >
+      <div className="flex flex-col items-center mb-16">
+        <div className="my-8 animate-bounce text-[#A3D8FF]">
+          <FaCircle />
+        </div>
+        <p className="text-4xl font-bold bg-gradient-to-r from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] bg-clip-text text-transparent text-center">
+          {conceptItems.category}
+        </p>
+        <p className="w-full md:w-3/5 text-center mt-4">
+          {conceptItems.description}
+        </p>
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        {conceptCards}
+      </div>
     </section>
   );
 }

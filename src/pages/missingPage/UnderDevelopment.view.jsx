@@ -3,7 +3,7 @@ import { LuSettings } from "react-icons/lu";
 
 function UnderDevelopmentView() {
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-slate-400 text-2xl text-center text-neutral-200">
+    <div className="h-screen flex flex-col justify-center items-center text-2xl text-center text-neutral-200">
       <span>
         <LuSettings size={96} />
       </span>

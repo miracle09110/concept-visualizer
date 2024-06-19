@@ -5,20 +5,14 @@ import { Link } from "react-router-dom";
 
 function Cards({ title, label, subtitle, image, link }) {
   return (
-    <Link to={link} className={style.card}>
-      <div className={style.card_img}>
-        <img src={image} />
-      </div>
-      <div className={style.card_text}>
-        <div className={style.overlay}></div>
-        <span className={style.card_title}>{title}</span>
-        <span>
-          {label} {subtitle}
-        </span>
-      </div>
-      <div className={style.card_icon}>
-        <FaAngleRight size={28} />
-      </div>
+    <Link
+      to={link}
+      className="text-center py-2 w-[20rem] rounded-xl flex flex-col border border-neutral-600 hover:bg-gradient-to-r  from-[#FF76CE] via-[#94FFD8] to-[#FDFFC2] hover:text-neutral-800 transition bg-[#222831]"
+    >
+      <span className="text-md font-bold">{title}</span>
+      <span className="text-sm">
+        {label} {subtitle}
+      </span>
     </Link>
   );
 }

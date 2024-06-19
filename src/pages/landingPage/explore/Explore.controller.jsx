@@ -69,7 +69,7 @@ const concepts = [
       {
         title: "Bubble Sort",
         label: "Time Complexity:",
-        subtitle: "O(n^2)",
+        subtitle: "O(n)",
         image: "",
         link: "/bubble",
       },
@@ -83,21 +83,21 @@ const concepts = [
       {
         title: "Insertion Sort",
         label: "Time Complexity:",
-        subtitle: "O(n^2)",
+        subtitle: "O(n)",
         image: "",
         link: "/insertion",
       },
       {
         title: "Quick Sort",
         label: "Time Complexity:",
-        subtitle: "O(n^2)",
+        subtitle: "O(n log(n))",
         image: "",
         link: "/quick",
       },
       {
         title: "Merge Sort",
         label: "Time Complexity:",
-        subtitle: "O(n^2)",
+        subtitle: "O(n log(n))",
         image: "",
         link: "/merge",
       },
@@ -161,7 +161,7 @@ const ExploreController = () => {
   return (
     <>
       <HeaderView></HeaderView>
-      <ExploreView concepts={concepts} />;
+      <ExploreView concepts={concepts} />
     </>
   );
 };

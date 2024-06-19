@@ -34,10 +34,14 @@ nav {
 }
 
 .text_container {
-  width: 50%;
+  width: 100%;
   padding: 3em;
   height: 100%;
-  padding-top: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-top: 12em; */
+  /* margin-left: 4em; */
 }
 
 .text_container h1 {
@@ -51,9 +55,10 @@ nav {
   opacity: 0.75;
   margin-top: 1em;
   line-height: 1em;
+  margin-bottom: 2em;
 }
 
-.text_container button {
+/* .text_container button {
   background-color: black;
   color: white;
   border: 0;
@@ -65,13 +70,13 @@ nav {
 
 button:hover {
   cursor: pointer;
-}
+} */
 
 .sub_text {
   font-size: smaller;
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 640px) {
   .text_container {
     padding-top: 3em;
   }
